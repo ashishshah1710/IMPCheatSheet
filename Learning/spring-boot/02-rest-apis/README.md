@@ -712,3 +712,5 @@ A:
 
 **💡 Pro Tip:** Always use DTOs! Never expose entities directly. This gives you flexibility to change internal structure without affecting API contracts.
 
+
+

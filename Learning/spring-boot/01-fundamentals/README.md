@@ -646,3 +646,5 @@ Once you've mastered fundamentals, move to:
 **💡 Pro Tip for Interviews:**
 Be ready to explain how auto-configuration works under the hood. Draw the flow diagram if needed. Interviewers at 3.5+ years level expect deep understanding, not just surface knowledge!
 
+
+
