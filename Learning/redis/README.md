@@ -569,3 +569,42 @@ SCAN 0 MATCH user:* COUNT 100
 
 **💡 Pro Tip**: Use Redis for speed, not as primary database. Always have data backed up in a persistent database!
 
+---
+
+## 📖 Simple Explanation
+
+Redis is an in-memory data store used as cache, session store, rate limiter, pub/sub bus, and lightweight queue. Enterprise backends put Redis in front of PostgreSQL or MongoDB to cut latency and protect databases from repeated reads.
+
+It is not a replacement for a primary database unless you accept data loss risk; most teams use TTL, persistence options, and Redis Cluster or Sentinel for availability.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: Why use Redis in a microservice architecture?
+
+**Simple Answer:**
+It speeds up reads with cache-aside, stores short-lived sessions, enforces rate limits, and coordinates locks or leader election with low latency.
+
+### Q2: What is cache-aside pattern?
+
+**Simple Answer:**
+The app reads Redis first; on miss it loads from the database, writes Redis, and returns. Updates invalidate or refresh cache entries to avoid stale data.
+
+### Q3: How do you prevent cache stampede?
+
+**Simple Answer:**
+Use TTL jitter, locking around rebuild, early expiration with background refresh, or probabilistic early expiration so many threads do not hit the DB at once.
+
+### Q4: Redis persistence: RDB vs AOF?
+
+**Simple Answer:**
+RDB snapshots periodically for fast recovery with possible minute of loss. AOF logs every write for finer durability at higher disk cost. Many enterprises use both.
+
+### Q5: How do distributed locks with Redis work?
+
+**Simple Answer:**
+SET key value NX EX timeout acquires a lock with expiry. Only the holder that set the value should release it, often with Lua scripts; Redisson is common in Java shops.
+

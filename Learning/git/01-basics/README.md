@@ -446,3 +446,33 @@ HEAD^          # Parent of HEAD
 
 **💡 Pro Tip:** Practice these commands daily. Muscle memory is key to Git proficiency!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Git basics: **`git init`** or **clone** a repo, **`git add`** stages changes, **`git commit`** saves a snapshot, **`git push`** sends to remote. **`.gitignore`** excludes build artifacts. **Staging** lets you commit logical chunks, not every file at once.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What does `git add` and `git commit` do?
+
+**Simple Answer:** `git add` puts changes in the staging area. `git commit` records that staged snapshot locally with a message. Nothing hits the remote until `git push`.
+
+### 2. Difference between working directory and staging?
+
+**Simple Answer:** Working directory is your edited files. Staging (`index`) is what will go into the next commit. Lets you split one file's changes across commits if needed.
+
+### 3. How undo last commit (not pushed)?
+
+**Simple Answer:** `git commit --amend` fixes the last commit message or contents. `git reset --soft HEAD~1` removes the commit but keeps changes staged.
+
+### 4. What is `.gitignore`?
+
+**Simple Answer:** A file listing paths Git should never track (e.g. `node_modules/`, `.env`). Prevents secrets and noise from entering history.
+
+### 5. What is `git clone`?
+
+**Simple Answer:** Downloads a remote repository with full history into a new folder and sets `origin` remote—standard way to start on a team project.

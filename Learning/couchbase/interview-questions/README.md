@@ -486,3 +486,42 @@ Example:
 
 **Master these concepts for Couchbase interviews!** 🚀
 
+---
+
+## 📖 Simple Explanation
+
+This README collects Couchbase interview topics: fundamentals, architecture, performance, scaling, security, troubleshooting, and scenarios. Use it as a checklist before backend or platform interviews where Couchbase appears on the resume or in the job description.
+
+Focus on explaining tradeoffs aloud—latency vs consistency, index cost vs query speed, and when N1QL beats key-value access.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: Explain Couchbase architecture in one minute for an interviewer.
+
+**Simple Answer:**
+Clients talk to data nodes holding vbuckets. The cluster service manages membership. Query service runs N1QL. Index service builds secondary indexes. Memory accelerates hot data while persistence protects durability.
+
+### Q2: How do you troubleshoot a slow N1QL query in production?
+
+**Simple Answer:**
+Capture the request ID, inspect the plan, verify indexes exist and match predicates, check scan consistency needs, and reduce bucket scope. Often the fix is a missing composite index.
+
+### Q3: What security controls do enterprises require?
+
+**Simple Answer:**
+RBAC users and roles, TLS, network segmentation, audit logs, and encryption at rest. Applications should use least-privilege service accounts per bucket.
+
+### Q4: Scenario: cache stampede on hot keys—what do you do?
+
+**Simple Answer:**
+Add TTL jitter, request coalescing, pre-warm caches, scale replicas, and consider sub-document updates instead of full document rewrites for hot documents.
+
+### Q5: Scenario: node failure during peak traffic—what happens?
+
+**Simple Answer:**
+Replica promotion and client SDK rerouting should restore service if replication factor and capacity are healthy. Post-incident review covers rebalance time and whether you need more nodes.
+

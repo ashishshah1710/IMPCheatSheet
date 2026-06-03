@@ -679,3 +679,33 @@ Once you've mastered the basics:
 
 **Keep building! ⚛️**
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Beginner React: **function components**, **JSX**, **props**, **useState** for local state, **useEffect** for side effects (fetch on mount), **lists and keys**, **conditional render**, and **event handlers**. You compose small components into pages and lift state up when siblings need shared data.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What does `useState` do?
+
+**Simple Answer:** Adds local state to function components. Returns `[value, setValue]`—calling setter triggers re-render with new value.
+
+### 2. Why keys in lists?
+
+**Simple Answer:** Keys help React identify which list items changed—stable unique keys (ids) prevent bugs and poor performance when reordering.
+
+### 3. What is `useEffect`?
+
+**Simple Answer:** Runs side effects after render—data fetch, subscriptions, DOM sync. Dependency array controls when it re-runs; empty array = once on mount.
+
+### 4. Controlled vs uncontrolled input?
+
+**Simple Answer:** Controlled: value tied to React state via `value` + `onChange`. Uncontrolled: DOM holds value—use refs when needed.
+
+### 5. How pass data parent to child?
+
+**Simple Answer:** Pass props down: `<Child name={user.name} />`. Child reads `props.name`—one-way data flow makes debugging easier.

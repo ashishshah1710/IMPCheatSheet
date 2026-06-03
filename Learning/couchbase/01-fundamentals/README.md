@@ -564,3 +564,42 @@ CAS (Compare-And-Swap) is a value that changes each time a document is modified.
 
 **Continue to N1QL & Queries for advanced querying!** 🚀
 
+---
+
+## 📖 Simple Explanation
+
+Fundamentals cover Couchbase architecture, buckets, documents, key-value CRUD, basic N1QL, and primary indexes. You learn how data lives in a cluster and how applications connect through the SDK.
+
+Interviewers want clarity on memory-first behavior: hot data sits in memory for speed while persistence still exists on disk for recovery.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: What is Couchbase memory-first architecture?
+
+**Simple Answer:**
+Active working set is kept in memory so GET and query paths stay fast. Data is still persisted to disk so nodes can restart without losing committed data.
+
+### Q2: What is a document key and why does it matter?
+
+**Simple Answer:**
+Every document has a unique key used for direct access. Good key design includes type prefixes like user::123 for debugging, scanning limits, and avoiding predictable hot spots.
+
+### Q3: How do you upsert vs insert?
+
+**Simple Answer:**
+Upsert creates or replaces a document by key. Insert fails if the key exists, which protects against accidental overwrites in concurrent writers.
+
+### Q4: What is a primary index in N1QL?
+
+**Simple Answer:**
+It is the default index that allows querying documents when no secondary index exists. Production queries should use proper secondary indexes instead of relying on primary scans.
+
+### Q5: How does Couchbase fit as a cache and a database?
+
+**Simple Answer:**
+The same cluster can serve key-value cache patterns and durable documents, reducing separate Redis plus DB complexity when latency and JSON queries must coexist.
+

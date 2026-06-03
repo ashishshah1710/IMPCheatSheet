@@ -430,3 +430,33 @@ Tweet Cache: Recent tweets
 
 **💡 Pro Tip:** Practice drawing architectures by hand. In interviews, you'll be whiteboarding!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Real-world design walks through **concrete products**: URL shortener, Twitter feed, chat, video streaming. You practice **capacity estimates**, **API design**, **data model**, **bottlenecks** (fanout, hot keys), and **scaling levers** (cache, shard, async). Templates: requirements → math → diagram → deep dive → trade-offs.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. How design a URL shortener?
+
+**Simple Answer:** Hash or base62 encode IDs, store mapping in DB, cache hot URLs in Redis, redirect with HTTP 301/302. Estimate reads >> writes; plan collision handling.
+
+### 2. Twitter timeline challenge?
+
+**Simple Answer:** Fanout on write (push to followers) vs fanout on read (pull at request time). Hybrid: push for normal users, pull for celebrities with millions of followers.
+
+### 3. Chat system essentials?
+
+**Simple Answer:** WebSockets or long polling for real-time, message queue for delivery, store recent history, presence service, and idempotent message IDs.
+
+### 4. Video streaming basics?
+
+**Simple Answer:** Upload to object storage, transcode to bitrates, CDN delivery, metadata DB, recommendation as separate pipeline.
+
+### 5. What interviewers want in deep dive?
+
+**Simple Answer:** Pick one component—storage, cache, or queue—and explain data structures, failure modes, and how you'd monitor and scale it.

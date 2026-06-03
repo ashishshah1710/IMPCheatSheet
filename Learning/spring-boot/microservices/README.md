@@ -576,5 +576,36 @@ A:
 
 **👉 [Interview Questions →](../interview-questions/README.md)**
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- Microservices split a system into deployable services that talk over the network (HTTP or messaging).
+- Service discovery (Eureka) and API Gateway centralize routing, auth, and cross-cutting concerns.
+- Resilience patterns (circuit breaker, retries, bulkhead) prevent one failure from taking down everything.
+- Distributed tracing and centralized config are mandatory for debugging more than three services.
+
+## 🎯 Interview Quick Prep
+
+### Q1: Monolith vs microservices—when is microservices worth it?
+
+**Simple Answer:** Microservices help independent scaling and team ownership at the cost of network complexity, distributed transactions, and ops overhead. For interviews, say “start modular monolith unless domain boundaries are clear and org needs align.”
+
+### Q2: What role does an API Gateway play?
+
+**Simple Answer:** Single entry for clients: routing, SSL termination, auth, rate limits, aggregation. Hides internal service topology. Mention Spring Cloud Gateway vs Zuul (legacy).
+
+### Q3: How does service discovery work (e.g., Eureka)?
+
+**Simple Answer:** Services register on startup; clients resolve instances by name and load-balance. Health checks evict bad instances. Discuss CAP tradeoffs and prefer K8s DNS in cloud-native stacks.
+
+### Q4: Circuit breaker—plain English?
+
+**Simple Answer:** Stop calling a failing downstream after a threshold; fail fast or return fallback; periodically try again. Prevents thread pile-up. Resilience4j is the modern choice in Spring Cloud.
+
+### Q5: Saga vs 2PC for distributed transactions?
+
+**Simple Answer:** Two-phase commit is rare across microservices (tight coupling). Sagas use local transactions + compensating events (choreography or orchestration). Interviewers want eventual consistency acceptance.
+
+**Must-know for interviews:** Gateway + discovery, circuit breaker, and saga/eventual consistency vs monolith transactions.
 

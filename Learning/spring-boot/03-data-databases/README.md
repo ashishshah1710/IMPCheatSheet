@@ -550,5 +550,36 @@ A:
 
 **👉 [Phase 4: Security & Production →](../04-security-production/README.md)**
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- Spring Data JPA reduces boilerplate; you still design entities, indexes, and transactions carefully.
+- HikariCP is the default pool—tune pool size and timeouts for your DB and traffic.
+- Flyway/Liquibase version your schema like code—no manual prod hotfixes without migration.
+- Caching (Redis) speeds reads but adds invalidation complexity—use where metrics prove benefit.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How do you configure a production datasource in Boot?
+
+**Simple Answer:** `spring.datasource.*` with Hikari settings (`maximum-pool-size`, timeouts). Externalize credentials via env/secrets. Explain pool sizing vs DB max connections × pod count in Kubernetes.
+
+### Q2: JPA repository vs custom `@Query`?
+
+**Simple Answer:** Derived query methods for simple filters; `@Query` for joins/fetch plans; native SQL for reporting. Mention `@EntityGraph` or fetch join when interviewers say N+1.
+
+### Q3: How does Flyway fit the Boot lifecycle?
+
+**Simple Answer:** Migrations run on startup (by default) in order; each version applied once. Keeps environments aligned. Caution: destructive migrations need review and backward-compatible deploy strategies.
+
+### Q4: When would you add Redis caching?
+
+**Simple Answer:** Read-heavy, relatively stable data with clear TTL or eviction on writes. Use `@Cacheable` with named caches; define invalidation on updates. Warn about stale data and cache stampede.
+
+### Q5: Multiple datasources in one Boot app?
+
+**Simple Answer:** Separate `@Configuration` per datasource with distinct `EntityManagerFactory` and `@EnableJpaRepositories` base packages. Rare but interview-worthy—show you know transaction managers must match each EMF.
+
+**Must-know for interviews:** Hikari tuning, migration discipline, N+1 fixes, and cache invalidation strategy.
 

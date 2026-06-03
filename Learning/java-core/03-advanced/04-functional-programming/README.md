@@ -671,3 +671,32 @@ System.out.println("Parallel time: " + (end2 - start2) + " ms");
 
 **Master functional programming for modern Java!** 🎯
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Functional style in Java means passing behavior as lambdas and processing collections with streams instead of heavy loops.
+- A functional interface has one abstract method — lambdas implement it cleanly.
+- Streams are pipelines: filter, map, collect — often more readable than nested loops.
+- Optional helps you handle missing values without a chain of null checks.
+
+## 🎯 Interview Quick Prep
+
+### Q1: What is a lambda expression?
+**Simple Answer:** A short anonymous function, e.g. `(a, b) -> a + b`. It implements a functional interface. It replaces verbose anonymous inner classes for callbacks and stream operations.
+
+### Q2: Difference between `map()` and `flatMap()`?
+**Simple Answer:** `map()` transforms each element one-to-one (e.g. square each number). `flatMap()` transforms and then flattens nested structures (e.g. split words into characters, or flatten `List<List<T>>` to `List<T>`).
+
+### Q3: When should you use Optional?
+**Simple Answer:** As a return type when a value may be absent — forces callers to handle absence. Do not use Optional for fields or method parameters routinely; overuse adds noise.
+
+### Q4: When are parallel streams a bad idea?
+**Simple Answer:** Small data sets, ordered requirements, IO-bound work, or shared mutable state. Parallel splits work across the common ForkJoin pool — overhead can exceed benefit and cause subtle bugs.
+
+### Q5: What is a method reference?
+**Simple Answer:** Shorthand for a lambda that only calls an existing method, e.g. `String::toUpperCase` or `System.out::println`. Four kinds: static, instance on object, instance on arbitrary object, constructor.
+
+**Must-know for interviews:** Write a stream pipeline that filter → map → collect and explain intermediate vs terminal operations.
+
+

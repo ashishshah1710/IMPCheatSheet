@@ -764,3 +764,32 @@ public class SequencedCollectionsDemo {
 
 **Stay updated with the latest Java features!** 🚀
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Java keeps evolving — modules (9), `var` (10), HttpClient (11), switch expressions & text blocks (14–15), records & sealed classes (16–17), virtual threads (21).
+- New features aim at clearer code, safer APIs, and better scalability (especially Project Loom virtual threads).
+- You do not need every feature on day one — learn what your team’s JDK version actually uses.
+- LTS releases (11, 17, 21) are what most companies standardize on for production.
+
+## 🎯 Interview Quick Prep
+
+### Q1: What are records and when should you use them?
+**Simple Answer:** Records are compact immutable data carriers with generated constructor, equals, hashCode, and accessors. Use for DTOs and value objects. Use regular classes when you need mutable state or complex inheritance.
+
+### Q2: What are sealed classes?
+**Simple Answer:** Sealed types restrict which classes can extend or implement them. Combined with pattern matching in switch, the compiler can check that all cases are handled — safer domain modeling.
+
+### Q3: What are virtual threads (Java 21)?
+**Simple Answer:** Lightweight threads managed by the JVM, cheap to create in huge numbers. Ideal for IO-bound workloads (many blocking calls) without thread pool exhaustion. They are not faster CPU-wise for compute-heavy tasks.
+
+### Q4: What is the module system (JPMS) for?
+**Simple Answer:** `module-info.java` defines explicit dependencies and exports. It strengthens encapsulation beyond JAR classpath chaos. Many apps still use classpath; modules matter for libraries and JDK internals.
+
+### Q5: Switch expressions vs old switch statements?
+**Simple Answer:** Switch expressions use `->` and can return a value without `break`, reducing fall-through bugs. They work well with pattern matching for type-safe branching.
+
+**Must-know for interviews:** Compare record vs class, and one sentence on why virtual threads help HTTP servers handle more concurrent requests.
+
+

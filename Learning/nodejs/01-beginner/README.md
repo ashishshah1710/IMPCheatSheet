@@ -586,3 +586,33 @@ Once you've mastered the basics:
 
 **Keep coding! 🟢**
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Beginner Node covers **modules** (`require`/`import`), **built-in `http`**, **fs** for files, **npm scripts**, and simple **REST** handlers. You learn async with **callbacks**, then **Promises** and **async/await**. Small projects (todo API, file server) build confidence before Express and databases.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is the event loop?
+
+**Simple Answer:** Node's mechanism to run callbacks when I/O completes—keeps one thread busy without waiting on slow operations.
+
+### 2. Callback vs Promise vs async/await?
+
+**Simple Answer:** Callbacks nest deeply (callback hell). Promises chain with `.then`. async/await is syntactic sugar over Promises—easier to read sequential async code.
+
+### 3. How create a simple HTTP server?
+
+**Simple Answer:** Use `http.createServer((req,res)=>{...}).listen(port)` or Express `app.get('/')`—handle method, URL, headers, and response body/status.
+
+### 4. What is `package.json`?
+
+**Simple Answer:** Project manifest: name, scripts (`npm start`), dependencies, Node version—defines how npm installs and runs your app.
+
+### 5. Common beginner mistake?
+
+**Simple Answer:** Blocking the event loop with sync heavy CPU work or huge sync file reads—use async APIs and streaming for large files.

@@ -557,3 +557,42 @@ public class KafkaConfig {
 
 👉 **[Start with Fundamentals →](01-fundamentals/README.md)**
 
+---
+
+## 📖 Simple Explanation
+
+Apache Kafka is a distributed log for streaming events between services. Producers append records to topics split into partitions; consumers read in groups with offset tracking. Enterprises use it for integration, audit trails, real-time analytics, and decoupling microservices.
+
+Unlike classic queues that delete messages after read, Kafka retains messages for a configurable time so many consumers can replay history—critical for reprocessing and new services catching up.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: Why do enterprises adopt Kafka instead of a message queue?
+
+**Simple Answer:**
+Kafka handles very high throughput, durable ordered logs per partition, and replay. Multiple teams can consume the same stream for different purposes without tight coupling.
+
+### Q2: What is a consumer group?
+
+**Simple Answer:**
+Consumers with the same group.id share partitions—each partition is read by one consumer in the group at a time. Scale consumers up to partition count for parallelism.
+
+### Q3: What guarantees does Kafka provide?
+
+**Simple Answer:**
+Ordering is per partition. Delivery is at-least-once by default; exactly-once needs idempotent producers, transactions, and careful consumer offset commits.
+
+### Q4: How does replication work?
+
+**Simple Answer:**
+Each partition has a leader broker and follower replicas. If the leader fails, a follower is elected so the topic stays available when min.insync.replicas is met.
+
+### Q5: How does Kafka fit Spring Boot microservices?
+
+**Simple Answer:**
+Spring Kafka provides KafkaTemplate for publishing and @KafkaListener for consumption, plus error handlers and DLT patterns for poison messages in enterprise pipelines.
+

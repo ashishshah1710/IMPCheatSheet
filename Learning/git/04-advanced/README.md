@@ -349,3 +349,33 @@ git stash pop      # Restore changes
 
 **👉 Next:** [Interview Questions →](../interview-questions/README.md)
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Advanced Git: **`git rebase -i`** rewrites history, **`reflog`** recovers "lost" commits, **`git stash`** shelves WIP, **`bisect`** finds regression commits, **hooks** automate checks, **submodules** pin other repos inside yours. Use these carefully on shared branches—rewriting published history breaks teammates.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is `git reflog`?
+
+**Simple Answer:** A log of where HEAD and branches pointed—lifeline to recover commits after accidental reset or hard checkout.
+
+### 2. Interactive rebase use case?
+
+**Simple Answer:** Squash WIP commits, reword messages, reorder before merging a feature—keeps `main` history readable. Only on commits not yet shared widely.
+
+### 3. What is `git stash`?
+
+**Simple Answer:** Temporarily shelves uncommitted changes so you can switch branches clean, then `git stash pop` restores them.
+
+### 4. What is `git bisect`?
+
+**Simple Answer:** Binary search through history to find which commit introduced a bug—automates good/bad testing.
+
+### 5. Pre-commit hook?
+
+**Simple Answer:** A script Git runs before commit succeeds—often runs linters or tests to block bad commits early.

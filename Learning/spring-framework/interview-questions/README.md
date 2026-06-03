@@ -196,5 +196,37 @@ All are specialized `@Component` annotations for semantic clarity.
 
 **[← Back to Main](../README.md)**
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- This folder is your rapid-review bank: core Spring, MVC, data, and scenario questions together.
+- Interviewers at 3–5 years want reasoning and tradeoffs, not definitions copied from docs.
+- Practice explaining one real bug you fixed (transactions, security, performance) per topic area.
+- Link answers to layers: controller → service → repository → database.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How do you structure a strong answer to “What is Dependency Injection?”
+
+**Simple Answer:** Define IoC/DI in one sentence, name constructor injection as default, and give a testability example (mock repository in a unit test). End with a benefit you saw in production—faster feature swaps or cleaner modules.
+
+### Q2: What is a good bean-scope answer in under 30 seconds?
+
+**Simple Answer:** Default singleton for stateless beans; prototype when each consumer needs its own instance; web scopes for per-request/session state. Add when you chose prototype to avoid shared mutable state bugs.
+
+### Q3: How do you explain `@Transactional` without sounding vague?
+
+**Simple Answer:** Proxy + transaction manager, default rollback on runtime exceptions, propagation/isolation knobs, and the self-invocation pitfall. Mention one incident: partial commit, long lock, or read-only optimization with `readOnly = true`.
+
+### Q4: Typical Spring MVC whiteboard question?
+
+**Simple Answer:** Draw DispatcherServlet → controller → service → repo, note filters and `@RestControllerAdvice`. Contrast `@Controller` (views) vs `@RestController` (JSON body).
+
+### Q5: Scenario: “API is slow under load”—where do you start?
+
+**Simple Answer:** Metrics and traces, DB query plan/N+1, pool exhaustion, missing indexes, synchronous external calls, and cache misuse. Show structured debugging—not random tuning.
+
+**Must-know for interviews:** Short, layered answers with one real production example per major Spring topic.
 
 

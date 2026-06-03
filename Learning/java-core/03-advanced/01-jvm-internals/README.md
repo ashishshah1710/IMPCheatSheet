@@ -842,3 +842,32 @@ java -XX:+PrintGCDetails \
 
 **Next: Advanced Concurrency** 🧵
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- The JVM is the engine that runs your bytecode — it loads classes, manages memory, compiles hot code, and runs garbage collection.
+- Stack holds method calls and local variables per thread; heap holds objects everyone shares.
+- JIT makes frequently used code run at near-native speed after warm-up.
+- Understanding this helps you fix slow apps, memory issues, and interview questions about "what happens when you run java MyClass."
+
+## 🎯 Interview Quick Prep
+
+### Q1: Explain JVM memory areas in simple terms.
+**Simple Answer:** Heap stores objects (shared by threads). Each thread has its own stack for method calls and locals. Metaspace holds class metadata (Java 8+). PC registers track the current instruction. Native stack handles JNI calls.
+
+### Q2: What are the three phases of class loading?
+**Simple Answer:** Loading reads the `.class` file and creates a `Class` object. Linking verifies bytecode, prepares static fields, and resolves references. Initialization runs static blocks and assigns static fields their real values.
+
+### Q3: What does the JIT compiler do?
+**Simple Answer:** The interpreter runs bytecode first; the JIT compiles "hot" methods to native machine code for speed. It applies optimizations like inlining and escape analysis. Warm-up matters for benchmarks.
+
+### Q4: Stack vs heap — where do local variables and `new` objects go?
+**Simple Answer:** Local primitives and references live on the stack (per thread). Objects created with `new` live on the heap; the reference on the stack points to them. When a method ends, its stack frame is popped; heap objects wait for GC.
+
+### Q5: What happens when you run `java MyClass`?
+**Simple Answer:** ClassLoader loads `MyClass`, links and initializes it, creates the main thread, invokes `public static void main`, JIT may compile hot methods, GC runs in the background, and the JVM exits when main finishes.
+
+**Must-know for interviews:** Draw heap (young/old/metaspace) + per-thread stack; mention class loader delegation parent-first.
+
+

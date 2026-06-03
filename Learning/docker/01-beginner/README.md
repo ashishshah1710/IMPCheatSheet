@@ -418,3 +418,33 @@ Once you've mastered the basics:
 
 **Next Topic:** Creating your own Docker images with Dockerfiles! 🚀
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Docker packages your app plus everything it needs (libraries, config, runtime) into a **container**—a lightweight box that runs the same way on any machine. An **image** is the blueprint; a **container** is a running copy. Unlike a full virtual machine, containers share the host OS kernel, so they start fast and use less memory. You use the Docker CLI to pull images, run containers, map ports, and view logs—solving the classic "works on my machine" problem for teams and deployments.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is Docker and why do teams use it?
+
+**Simple Answer:** Docker standardizes how apps run by bundling code and dependencies into portable containers. Teams use it for consistent dev/test/prod environments, faster onboarding, and easier deployment without manual server setup.
+
+### 2. What is the difference between a Docker image and a container?
+
+**Simple Answer:** An image is a read-only template (layers of filesystem + metadata). A container is a running instance of that image with its own process, network, and writable layer. You can run many containers from one image.
+
+### 3. How do you expose a container port to your laptop?
+
+**Simple Answer:** Use `-p hostPort:containerPort` with `docker run`, e.g. `-p 8080:80` maps host 8080 to container port 80. Without port mapping, the service inside the container is not reachable from outside.
+
+### 4. What is Docker Hub?
+
+**Simple Answer:** Docker Hub is a public registry where you store and share images. `docker pull` downloads an image; `docker push` uploads your built image after you tag it with your registry username.
+
+### 5. Name three essential beginner commands.
+
+**Simple Answer:** `docker run` starts a container, `docker ps` lists running containers, and `docker logs` shows stdout/stderr. `docker stop`/`docker rm` stop and remove containers; `docker images` lists local images.

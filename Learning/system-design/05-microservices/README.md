@@ -664,3 +664,33 @@ public Order createOrder(Order order) {
 
 **💡 Pro Tip**: Don't start with microservices! Build a monolith first, identify boundaries, then extract services when you have a clear reason to do so.
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Microservices split a system into **small deployable services** each owning its data and business capability. They communicate via **REST/gRPC** (sync) or **queues** (async). You gain independent scaling and teams but pay for **network latency**, **distributed transactions**, and **operational complexity**. Start monolith, extract when boundaries are clear.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. Monolith vs microservices trade-off?
+
+**Simple Answer:** Monolith: simpler deploy and debug. Microservices: independent scale/deploy and team ownership—needs API gateway, discovery, observability, and DevOps maturity.
+
+### 2. What is an API gateway?
+
+**Simple Answer:** Single entry for clients—auth, routing, rate limiting, aggregation—hiding internal service topology.
+
+### 3. Circuit breaker pattern?
+
+**Simple Answer:** Stops calling a failing downstream service after thresholds—fail fast and recover gradually to prevent cascade outages.
+
+### 4. Saga pattern?
+
+**Simple Answer:** Coordinates multi-service transactions via local commits plus compensating events—replaces distributed 2PC for many workflows.
+
+### 5. Database per service—why?
+
+**Simple Answer:** Each service owns its schema—no shared tables coupling deploys. Trade-off: harder cross-service queries; use APIs or event streams.

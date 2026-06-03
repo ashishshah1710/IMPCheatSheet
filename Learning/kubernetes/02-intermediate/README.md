@@ -504,3 +504,33 @@ Init containers run before app containers and must complete successfully. Used f
 
 **Continue to Advanced Kubernetes for production deployments!** ☸️
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+**ConfigMaps** hold non-sensitive config; **Secrets** hold sensitive data (encoded, not encrypted by default—use external secret managers in prod). **PersistentVolumes** give pods durable storage beyond pod lifetime. **Ingress** routes HTTP(S) from outside into cluster services; **StatefulSets** give stable identity and storage for databases.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. ConfigMap vs Secret—when use each?
+
+**Simple Answer:** ConfigMaps store plain config like feature flags or URLs. Secrets store passwords, tokens, or certs. Neither replaces a vault; restrict RBAC and enable encryption at rest for Secrets in production.
+
+### 2. What is a PersistentVolumeClaim (PVC)?
+
+**Simple Answer:** A PVC requests storage from the cluster; Kubernetes binds it to a PV. Pods mount the PVC so data survives pod restarts—essential for databases and file uploads.
+
+### 3. What is an Ingress?
+
+**Simple Answer:** Ingress is an API object (often with an Ingress controller like NGINX) that routes external HTTP traffic to internal Services by host/path, usually with TLS termination.
+
+### 4. What is a StatefulSet?
+
+**Simple Answer:** StatefulSet manages pods with stable network names and ordered startup/shutdown—used for Kafka, ZooKeeper, or databases that need persistent identity and disk per replica.
+
+### 5. What are liveness and readiness probes?
+
+**Simple Answer:** Liveness restarts unhealthy containers. Readiness removes pods from Service endpoints until they can accept traffic—preventing requests to pods still starting up.

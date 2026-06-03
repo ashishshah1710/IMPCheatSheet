@@ -489,3 +489,33 @@ AutoScalingGroup:
 
 **💡 Pro Tip**: In interviews, always discuss trade-offs. There's no perfect solution, only the right solution for given constraints!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Scalability means handling more users without falling over. **Scale out** (more servers) beats **scale up** (bigger box) at web scale. Tools include **load balancing**, **caching** (CDN, Redis), **read replicas**, **sharding**, **async queues**, and **auto-scaling**. Always measure before optimizing.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. Round robin vs least connections?
+
+**Simple Answer:** Round robin rotates evenly—simple. Least connections sends to the server with fewest active connections—better for long-lived or uneven requests.
+
+### 2. What is cache-aside?
+
+**Simple Answer:** App reads cache first; on miss, reads DB and writes cache. Simple and common; watch stale data and cache stampede on hot keys.
+
+### 3. Read replica purpose?
+
+**Simple Answer:** Offload read traffic from primary DB. Writes still go to primary; replication lag means reads may be slightly stale—acceptable for many feeds.
+
+### 4. What is database sharding?
+
+**Simple Answer:** Splitting rows across DB instances by shard key (e.g. user_id). Scales writes but complicates cross-shard queries and rebalancing.
+
+### 5. CDN benefit?
+
+**Simple Answer:** Caches static assets at edge locations near users—cuts latency and origin load for images, JS, and video.

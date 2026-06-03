@@ -361,3 +361,33 @@ git push origin main
 
 **👉 Next:** [Advanced Topics →](../04-advanced/README.md)
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Team Git uses a **remote** (`origin`), **`git fetch`** downloads commits without merging, **`git pull`** fetch+merge, **`git push`** uploads. **Pull requests** are code review before merge. **Fork** copies someone else's repo to your account; **upstream** sync keeps your fork current.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. Fetch vs pull?
+
+**Simple Answer:** `git fetch` updates remote-tracking branches only—you inspect before merging. `git pull` is fetch plus merge (or rebase), which can surprise you if you have not reviewed incoming commits.
+
+### 2. What is a pull request?
+
+**Simple Answer:** A request to merge your branch into another (usually `main`), with review comments and CI checks. It is a collaboration gate, not a Git core command.
+
+### 3. How resolve "rejected push"?
+
+**Simple Answer:** Someone pushed first—`git pull --rebase` (or pull then push) integrates their work, resolve conflicts, then push again.
+
+### 4. Fork workflow?
+
+**Simple Answer:** Fork on GitHub, clone your fork, push branches to your fork, open PR to upstream. Maintainers merge; you sync fork from upstream periodically.
+
+### 5. What is `origin`?
+
+**Simple Answer:** Default name for the remote you cloned from—usually the team's GitHub repo URL for push/pull.

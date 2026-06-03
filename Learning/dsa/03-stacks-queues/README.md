@@ -419,3 +419,36 @@ int[] maxSlidingWindow(int[] nums, int k) {
 
 **💡 Pro Tip**: Monotonic stack is one of the most powerful patterns in competitive programming. Master it!
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Stack = last-in-first-out (undo, parsing brackets); queue = first-in-first-out (BFS, scheduling).
+- Use a stack when you need the “most recent” valid element (next greater element, valid parentheses).
+- Monotonic stack keeps elements in sorted order as you scan—many O(n) “nearest greater” problems.
+- Queue + BFS explores level by level in trees and graphs.
+
+## 🎯 Interview Quick Prep
+
+### Q1: Valid parentheses—how does the stack help?
+
+**Simple Answer:** Push opening brackets; on closing, pop matching opener or fail. O(n) time, O(n) space for depth. Mention only bracket types allowed and empty string edge case.
+
+### Q2: What is a monotonic stack used for?
+
+**Simple Answer:** Maintain increasing or decreasing values to answer “next greater/smaller element” for each index in one pass. Pop smaller tops when a bigger value arrives—classic daily temperatures pattern.
+
+### Q3: Implement queue using two stacks?
+
+**Simple Answer:** `in` stack for enqueue, `out` for dequeue; move all from `in` to `out` when `out` empty. Amortized O(1) per operation—good follow-up on amortized analysis.
+
+### Q4: Stack vs recursion?
+
+**Simple Answer:** DFS recursion is the call stack; iterative DFS uses explicit stack—important for deep trees (stack overflow). Interviewers like you connect both representations.
+
+### Q5: When is a deque (double-ended queue) needed?
+
+**Simple Answer:** Sliding window maximum uses deque storing indices in decreasing value order—drop outdated front when window moves. O(n) total instead of re-scanning window.
+
+**Must-know for interviews:** Parentheses stack, monotonic stack for next greater, and deque for sliding window max.
+

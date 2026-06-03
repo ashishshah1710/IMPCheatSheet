@@ -705,5 +705,36 @@ public class DatabaseService {
 
 **💡 Pro Tip:** Master these core concepts thoroughly. They are the foundation of all Spring applications and are heavily tested in interviews!
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- The container is like a factory: it builds beans once (or per scope), connects them, and starts your app.
+- Constructor injection is preferred because dependencies are required, immutable, and easy to mock in tests.
+- Bean scopes control how many instances exist (singleton for services, prototype when each call needs a new object).
+- Circular dependencies and lifecycle hooks are common “gotcha” interview topics at the 3–5 year level.
+
+## 🎯 Interview Quick Prep
+
+### Q1: Why is constructor injection recommended over field injection?
+
+**Simple Answer:** Constructor injection makes dependencies explicit and required, supports `final` fields, and works cleanly with unit tests without Spring context. Field injection hides dependencies and makes testing and circular-dependency issues harder to spot.
+
+### Q2: What are the main bean scopes and when do you use them?
+
+**Simple Answer:** `singleton` (default) shares one instance per container—ideal for stateless services. `prototype` creates a new bean per request from the container. Web scopes (`request`, `session`) tie beans to HTTP lifecycle. Pick scope based on whether the bean holds user-specific state.
+
+### Q3: How does Spring resolve circular dependencies?
+
+**Simple Answer:** For singleton beans, Spring can break cycles using early references (three-level cache) when setter/field injection is involved. Constructor-only cycles fail at startup—fix by redesigning (interface extraction, `@Lazy`, or event-based decoupling).
+
+### Q4: `@Component` vs `@Service` vs `@Repository`—does it matter?
+
+**Simple Answer:** Technically they are all component stereotypes scanned the same way. Semantically, `@Service` marks business layer and `@Repository` adds persistence exception translation. Use them for clarity in layered architecture, not magic behavior.
+
+### Q5: What is `ApplicationContext` vs `BeanFactory`?
+
+**Simple Answer:** `BeanFactory` is the minimal container API; `ApplicationContext` adds enterprise features (events, internationalization, AOP auto-registration). In modern Spring Boot apps you almost always work with `ApplicationContext` implementations.
+
+**Must-know for interviews:** IoC/DI definition, constructor injection, bean scopes, and circular dependency limits with constructor injection.
 

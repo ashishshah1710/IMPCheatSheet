@@ -546,3 +546,33 @@ def process_users(users: List[Dict[str, str]]) -> Optional[int]:
 
 **💡 Pro Tip**: Python is excellent for rapid prototyping and interviews. Master the basics, then specialize in web dev or data science based on your interests!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Python is a **readable, versatile** language—web (Django/Flask/FastAPI), data science, scripting, automation. **Indentation** defines blocks; **pip** installs packages. Dynamic typing with optional type hints; huge standard library and ecosystem make it popular for interviews and prototypes.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. Why is Python popular?
+
+**Simple Answer:** Simple syntax, rich libraries, fast to write—great for scripts, ML, web APIs, and learning programming.
+
+### 2. List vs tuple?
+
+**Simple Answer:** Lists are mutable `[]`; tuples are immutable `()`—use tuples for fixed records, lists for collections that change.
+
+### 3. What is a virtual environment?
+
+**Simple Answer:** Isolated `venv` per project so dependencies do not conflict globally—always use one per app.
+
+### 4. Flask vs Django?
+
+**Simple Answer:** Flask is minimal microframework—flexible. Django is batteries-included (ORM, admin, auth)—faster for full web apps.
+
+### 5. GIL interview note?
+
+**Simple Answer:** Global Interpreter Lock limits true parallel CPU threads in CPython—use multiprocessing or other runtimes for CPU-bound parallelism.

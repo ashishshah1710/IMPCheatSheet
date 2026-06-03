@@ -530,3 +530,35 @@ logging:
 
 👉 **[Start with Fundamentals →](01-fundamentals/README.md)**
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Spring Boot is Spring with batteries included: starters, auto-config, and an embedded server so you run `main()` and ship fast.
+- You configure behavior with `application.yml` and `@ConfigurationProperties`, not huge XML files.
+- Actuator and health checks are how ops knows your app is alive in Kubernetes or the cloud.
+- At 3–5 years, interviews focus on *how* auto-config chooses beans and how you override it safely.
+
+## 🎯 Interview Quick Prep
+
+### Q1: Spring Framework vs Spring Boot?
+
+**Simple Answer:** Framework gives core IoC, MVC, data, security. Boot adds opinionated auto-configuration, starters, embedded Tomcat, and production features (Actuator). Boot is not a replacement—it builds on Framework with faster bootstrap.
+
+### Q2: What is Spring Boot auto-configuration?
+
+**Simple Answer:** `@EnableAutoConfiguration` loads conditional `@Configuration` classes based on classpath and properties (e.g., DataSource if JDBC on classpath). You override with your own `@Bean` or `application.properties`. Explain `@ConditionalOn*` mentally.
+
+### Q3: Why use starter dependencies?
+
+**Simple Answer:** Starters bundle compatible libraries (e.g., `spring-boot-starter-web`) so you avoid version conflicts and missing transitive deps. Interview tip: mention BOM/import for dependency management in Maven/Gradle.
+
+### Q4: How do you make a Boot app production-ready?
+
+**Simple Answer:** Externalized config, health/metrics via Actuator, proper logging, connection pooling, security, tests, and container-friendly settings (graceful shutdown, probes). Reference profiles (`dev`, `prod`) and secrets from env/vault.
+
+### Q5: Common Boot pitfalls senior interviewers mention?
+
+**Simple Answer:** Over-broad component scan, fighting auto-config without understanding conditions, giant `application.yml`, missing `readOnly` transactions, and exposing Actuator without security. Show you profile and secure endpoints.
+
+**Must-know for interviews:** Auto-configuration conditions, starters/BOM, profiles, and Actuator health for production.

@@ -486,3 +486,33 @@ Before moving to intermediate:
 
 **Happy Coding with React! ⚛️**
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+React builds UIs from **components**—reusable pieces of JSX that describe what the screen should look like for given **state** and **props**. When state changes, React **re-renders** efficiently via a virtual DOM diff. It fits SPAs, mobile (React Native), and large teams that want predictable UI structure.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is React?
+
+**Simple Answer:** A JavaScript library for building user interfaces with component-based architecture and declarative rendering.
+
+### 2. Props vs state?
+
+**Simple Answer:** Props are inputs from parent (read-only in child). State is internal data the component owns and updates—triggers re-render when set.
+
+### 3. What is JSX?
+
+**Simple Answer:** Syntax mixing HTML-like tags with JavaScript expressions—compiled to `React.createElement` calls.
+
+### 4. Virtual DOM benefit?
+
+**Simple Answer:** React batches updates and diffs virtual tree to real DOM—reduces expensive direct DOM manipulation for complex UIs.
+
+### 5. React vs Angular/Vue (high level)?
+
+**Simple Answer:** React is a view library (ecosystem adds routing/state). Angular is full framework. Vue is progressive—all valid; React dominates job market for SPAs.

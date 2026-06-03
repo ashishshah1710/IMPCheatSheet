@@ -363,3 +363,33 @@ Network (cross DC):   150 ms
 
 **💡 Pro Tip:** Always start with requirements clarification. Don't jump to solutions!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Fundamentals cover **scalability**, **latency vs throughput**, **availability** (nines), **load balancers**, **caching**, **databases** (SQL/NoSQL), and **message queues**. You learn back-of-envelope math (storage, QPS) and patterns like **stateless app servers** behind a load balancer with shared session store or JWT.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is availability "99.9%"?
+
+**Simple Answer:** About 8.76 hours downtime per year. Each nine is roughly 10x less downtime—design redundancy and monitoring accordingly.
+
+### 2. Stateless vs stateful servers?
+
+**Simple Answer:** Stateless servers store no session on disk—any instance can serve any request (easier scale). Stateful needs sticky sessions or external session store.
+
+### 3. What does a load balancer do?
+
+**Simple Answer:** Distributes traffic across healthy backends, terminates SSL optionally, and enables rolling deploys without taking the whole site down.
+
+### 4. When add a message queue?
+
+**Simple Answer:** When work can be async (email, analytics), to decouple services, absorb spikes, or retry failed jobs without blocking the user request path.
+
+### 5. SQL vs NoSQL quick rule?
+
+**Simple Answer:** SQL for structured data, transactions, joins. NoSQL for flexible schema, huge scale, or specific models (document, wide-column, graph)—often eventually consistent.

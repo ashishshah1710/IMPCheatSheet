@@ -792,5 +792,36 @@ Analytics Service (Kafka)
 
 **Good Luck with Your Interviews! 🚀**
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- Use this section as a mock interview script: answer aloud with diagrams and one war story each.
+- Boot questions often blend Framework (transactions, security) with cloud (K8s, config, metrics).
+- System design prompts (URL shortener, rate limits) test architecture, not syntax.
+- Depth beats buzzwords—explain tradeoffs and what you’d do differently next time.
+
+## 🎯 Interview Quick Prep
+
+### Q1: “Explain Spring Boot in one minute.”
+
+**Simple Answer:** Opinionated layer on Spring: auto-config, starters, embedded server, Actuator. Faster bootstrap with sensible defaults you can override. End with how you customized auto-config on a real service.
+
+### Q2: “How does auto-configuration work?”
+
+**Simple Answer:** Conditional configuration classes on classpath; respects your beans and properties. Mention `spring.autoconfigure.exclude` or `@SpringBootApplication(exclude=...)` when you disabled a feature.
+
+### Q3: “Design a rate-limited API.”
+
+**Simple Answer:** Gateway or filter + token bucket (Redis), 429 responses, idempotency keys for writes. Discuss per-user vs per-IP limits and observability on rejections.
+
+### Q4: “App starts slow—what do you check?”
+
+**Simple Answer:** Classpath bloat, eager beans, Flyway on huge DB, debug logging, unnecessary `@ComponentScan`. Lazy init as tactical fix; structural fix is slimming context.
+
+### Q5: “How do you handle high traffic?”
+
+**Simple Answer:** Horizontal scale stateless instances, caching, DB tuning, async messaging, circuit breakers, CDN for static. Never skip backpressure and pool limits—those cause cascading failures.
+
+**Must-know for interviews:** Auto-config story, production checklist, and one full system-design narrative with tradeoffs.
 

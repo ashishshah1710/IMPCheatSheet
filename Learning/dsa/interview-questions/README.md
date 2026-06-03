@@ -522,3 +522,36 @@ A carefully selected list covering all patterns - complete these for interview r
 
 **💡 Pro Tip**: Focus on understanding patterns rather than memorizing solutions. Once you master patterns, you can solve 80% of problems!
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- This hub collects question types companies repeat—arrays, trees, graphs, DP, system-flavored coding.
+- Interview success = pattern recognition + clear communication + testing edge cases.
+- For 3–5 YOE, expect medium problems in 25–35 minutes and one hard or design follow-up.
+- Quality of explanation often breaks ties between candidates who pass the same tests.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How do you prep the “Blind 75” style lists efficiently?
+
+**Simple Answer:** Group by pattern (not random order), redo missed problems after 3 days, and verbalize complexity before coding. Track weak tags (DP, graphs) and overweight practice there.
+
+### Q2: What if you freeze on a problem?
+
+**Simple Answer:** Restate brute force, draw example, identify bottleneck (nested loop → hash map?). Interviewers reward recovery—ask for hint after showing structured thinking, not after silence.
+
+### Q3: How much system design for DSA rounds?
+
+**Simple Answer:** Pure DSA rounds stay algorithmic; some companies add “build a rate limiter” or “design Twitter feed” separately. Know Big-O of your API choices when they blend.
+
+### Q4: Behavioral + coding—what to emphasize at 3–5 years?
+
+**Simple Answer:** Own impact metrics (latency reduced, bugs prevented), tradeoffs you chose, and collaboration. One STAR story per major project pairs well with technical depth.
+
+### Q5: Post-interview habits that improve fast?
+
+**Simple Answer:** Write 3 bullets per missed problem: pattern, mistake, fix. Spaced repetition beats re-solving everything; mock with timer weekly.
+
+**Must-know for interviews:** Pattern-first study plan, articulate brute→optimize, and timed mocks with post-mortems.
+

@@ -585,5 +585,36 @@ A:
 
 **👉 [Microservices Patterns →](../microservices/README.md)**
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- Production means secure defaults: HTTPS, hashed passwords, locked-down Actuator, and secrets outside Git.
+- JWT fits stateless APIs; configure CORS so browsers can call your API safely.
+- Docker/K8s package the same jar you tested; health probes use Actuator `/health`.
+- Structured logs and metrics help you debug incidents under real traffic.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How do you secure a Spring Boot API with JWT?
+
+**Simple Answer:** Filter validates Bearer token, builds authentication, then authorization rules apply. Configure signing key from secrets, short access TTL, refresh flow if needed. Never store JWT in localStorage if XSS is a concern—mention cookie/httpOnly tradeoffs.
+
+### Q2: What Actuator endpoints do you expose in prod?
+
+**Simple Answer:** Typically `health` (and `prometheus` if used), behind auth/network policy. Disable or secure `env`, `beans`, `shutdown`. Liveness vs readiness: readiness checks DB/downstream deps.
+
+### Q3: CORS—what do interviewers want to hear?
+
+**Simple Answer:** Browser enforces CORS; server returns allowed origins/methods/headers. Configure `WebMvcConfigurer` or Spring Security CORS—restrict origins in prod, not `*` with credentials.
+
+### Q4: How do you containerize Boot for Kubernetes?
+
+**Simple Answer:** Multi-stage Docker build, JVM container awareness (`JAVA_TOOL_OPTIONS`), memory limits, graceful shutdown, probes on `/actuator/health/*`. Config via env vars and ConfigMaps/Secrets.
+
+### Q5: Where do secrets live?
+
+**Simple Answer:** Never in repo—use env vars, K8s Secrets, AWS Secrets Manager, Azure Key Vault. Rotate keys; separate dev/prod credentials. Mention 12-factor config.
+
+**Must-know for interviews:** JWT filter flow, secured Actuator, CORS basics, and K8s health probes.
 

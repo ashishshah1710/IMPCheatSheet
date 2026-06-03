@@ -693,3 +693,33 @@ def lambda_handler(event, context):
 
 **Continue to Advanced AWS for production-ready architectures!** 🚀
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Intermediate AWS connects pieces: **VPC** subnets and security groups for networking, **RDS** for managed SQL, **Lambda** for serverless functions, **ELB** for distributing traffic, and **CloudWatch** for metrics and alarms. You design **three-tier** apps (public load balancer, private app tier, private database) and use **IAM roles** so services talk securely without hard-coded keys.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is a VPC and why does it matter?
+
+**Simple Answer:** A Virtual Private Cloud is your isolated network in AWS. Subnets, route tables, and security groups control where resources live and which traffic is allowed.
+
+### 2. RDS vs running MySQL on EC2?
+
+**Simple Answer:** RDS is managed: backups, patching, Multi-AZ failover. EC2 gives full control but you operate everything. RDS is the default for production SQL unless you need exotic tuning.
+
+### 3. When use Lambda?
+
+**Simple Answer:** Lambda runs code on events without managing servers—good for APIs, webhooks, and light ETL. Pay per invocation and duration; cold starts and timeouts matter for design.
+
+### 4. What does an Application Load Balancer do?
+
+**Simple Answer:** ALB routes HTTP/HTTPS to healthy targets in multiple AZs, supports path/host routing, and integrates with Auto Scaling for elastic web tiers.
+
+### 5. What is CloudWatch?
+
+**Simple Answer:** CloudWatch collects metrics, logs, and alarms (e.g. high CPU triggers scale-out). It is the first place to debug production issues in AWS.

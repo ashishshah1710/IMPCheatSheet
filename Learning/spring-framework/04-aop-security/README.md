@@ -318,5 +318,36 @@ vs
 
 **👉 Next:** [Interview Questions →](../interview-questions/README.md)
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- AOP lets you add logging, metrics, or security around many methods without copying the same code everywhere.
+- An aspect = pointcut (where) + advice (when: before/after/around) applied by Spring proxies.
+- Spring Security is a filter chain: authenticate first (who you are), then authorize (what you can do).
+- JWT/OAuth2 are common in APIs; session cookies still matter in traditional web apps.
+
+## 🎯 Interview Quick Prep
+
+### Q1: What is AOP and when should you use it?
+
+**Simple Answer:** AOP applies cross-cutting behavior (logging, tracing, retries) across many join points via aspects. Use when the concern is not core business logic but must run consistently; avoid overusing AOP where a simple service wrapper is clearer.
+
+### Q2: What advice types exist and which is most powerful?
+
+**Simple Answer:** Before, after returning, after throwing, after (finally), and around. `@Around` can proceed or skip the method and measure time—most flexible but easiest to misuse; keep aspects thin.
+
+### Q3: How does Spring Security protect an HTTP request?
+
+**Simple Answer:** A chain of servlet filters checks authentication (credentials/token), builds `SecurityContext`, then authorization rules (`authorizeHttpRequests`, method security). Unauthenticated/unauthorized requests are rejected before controllers run.
+
+### Q4: Authentication vs authorization?
+
+**Simple Answer:** Authentication verifies identity (login, JWT validation). Authorization checks permissions/roles for a resource (`hasRole`, `@PreAuthorize`). You can be authenticated but still forbidden—that is 401 vs 403 in APIs.
+
+### Q5: JWT basics for REST interviews?
+
+**Simple Answer:** Server signs a token with claims; clients send `Authorization: Bearer`. Validate signature, expiry, and issuer; store secrets safely. Mention refresh tokens, stateless scaling, and that revocation needs extra design (blocklist, short TTL).
+
+**Must-know for interviews:** AOP terminology, filter-chain security model, and auth vs authorization with JWT tradeoffs.
 

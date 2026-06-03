@@ -551,3 +551,42 @@ public void transferFunds(String fromId, String toId, Double amount) {
 
 **Master Couchbase with Spring Boot for production applications!** 🚀
 
+---
+
+## 📖 Simple Explanation
+
+Spring Boot integration shows how to configure Couchbase, map @Document entities, use CouchbaseRepository and N1QL @Query, build services and REST APIs, and test deployments. This is the typical enterprise Java stack for Couchbase-backed microservices.
+
+Interviews connect framework knowledge to operations: connection string, bucket name, index creation on deploy, and health checks for cluster reachability.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: Which Spring dependency connects Boot to Couchbase?
+
+**Simple Answer:**
+spring-boot-starter-data-couchbase provides auto-configuration, templates, and repository support aligned with the Java SDK.
+
+### Q2: How do you map a JSON document to a Java class?
+
+**Simple Answer:**
+Use @Document, @Id, and @Field on a POJO so Spring Data maps fields to JSON properties and collection metadata.
+
+### Q3: How do you run N1QL from a repository?
+
+**Simple Answer:**
+Declare @Query with N1QL and SpEL helpers like #{#n1ql.selectEntity} so the framework generates bucket-aware SELECT statements.
+
+### Q4: How should services handle Couchbase timeouts in production?
+
+**Simple Answer:**
+Configure reasonable timeouts, retries only for idempotent reads, circuit breakers to protect the API, and clear errors when the cluster is unhealthy.
+
+### Q5: What should you test before release?
+
+**Simple Answer:**
+Integration tests against a test container or dev cluster, repository queries against real indexes, and smoke tests for upsert, query, and failover behavior in staging.
+

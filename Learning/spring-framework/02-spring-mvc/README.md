@@ -548,5 +548,36 @@ public class GlobalExceptionHandler {
 
 **👉 Next:** [Data Access & Transactions →](../03-data-access/README.md)
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- `DispatcherServlet` is the front door: every HTTP request goes through it before your controller runs.
+- `@RestController` returns JSON/XML directly; `@Controller` often returns a view name for server-rendered pages.
+- Validation and exception handlers keep APIs consistent so clients always get predictable error shapes.
+- Filters run before the servlet chain; interceptors run around controller execution—know both for security and logging.
+
+## 🎯 Interview Quick Prep
+
+### Q1: Walk through the Spring MVC request lifecycle.
+
+**Simple Answer:** Client hits `DispatcherServlet` → `HandlerMapping` picks the controller method → controller calls services → result goes through `HttpMessageConverter` (REST) or `ViewResolver` (MVC). Mention where filters, interceptors, and `@ExceptionHandler` fit.
+
+### Q2: `@Controller` vs `@RestController`?
+
+**Simple Answer:** `@Controller` is for traditional MVC that returns view names. `@RestController` is `@Controller` + `@ResponseBody`, so return values serialize to the HTTP body (typical REST APIs). Use REST controllers for microservices and JSON APIs.
+
+### Q3: How do you handle exceptions globally?
+
+**Simple Answer:** Use `@ControllerAdvice` or `@RestControllerAdvice` with `@ExceptionHandler` methods mapped to exception types. Return consistent status codes and error DTOs; log server-side details, expose safe messages to clients.
+
+### Q4: How does validation work in Spring MVC?
+
+**Simple Answer:** Annotate request DTOs with Bean Validation (`@NotNull`, `@Email`, etc.) and add `@Valid` or `@Validated` on controller parameters. Spring returns 400 with binding errors; customize via exception handler for your API contract.
+
+### Q5: What async or performance topics might interviewers ask?
+
+**Simple Answer:** `Callable`/`DeferredResult` for async MVC, content negotiation with `produces`/`consumes`, and pagination with `Pageable`. For 3–5 years, also mention avoiding blocking calls on reactive stacks if the team uses WebFlux.
+
+**Must-know for interviews:** DispatcherServlet flow, `@RestController` vs `@Controller`, and global exception handling with `@RestControllerAdvice`.
 

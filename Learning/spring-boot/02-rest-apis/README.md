@@ -712,5 +712,36 @@ A:
 
 **💡 Pro Tip:** Always use DTOs! Never expose entities directly. This gives you flexibility to change internal structure without affecting API contracts.
 
+---
 
+## 💡 Simple Explanation (In Plain English)
+
+- REST APIs should be resource-oriented URLs with correct HTTP verbs and status codes.
+- DTOs + validation keep contracts stable; entities stay inside the service layer.
+- `@RestControllerAdvice` centralizes errors so every endpoint behaves the same.
+- Versioning, pagination, and OpenAPI docs matter when multiple teams consume your API.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How do you design a clean REST controller in Boot?
+
+**Simple Answer:** Thin controller: map HTTP to service calls, return `ResponseEntity` with proper status (201 create, 204 delete). No business logic or direct repository access—keeps tests and transactions in the service layer.
+
+### Q2: Why are DTOs non-negotiable in interviews?
+
+**Simple Answer:** They hide persistence shape, avoid lazy-loading in JSON, and let you version APIs independently. Mention MapStruct/manual mappers and not returning JPA graphs by accident.
+
+### Q3: How do you version APIs?
+
+**Simple Answer:** URI path (`/v1/`), header (`Accept-Version`), or query param—pick one standard per org. Boot doesn’t mandate; consistency and deprecation policy matter more than the mechanism.
+
+### Q4: Global exception handling pattern?
+
+**Simple Answer:** `@RestControllerAdvice` + `@ExceptionHandler` per domain exception → stable error body + HTTP status. Log with correlation ID; map validation errors to 400 with field details.
+
+### Q5: How do you document APIs for consumers?
+
+**Simple Answer:** Springdoc OpenAPI (Swagger UI) from annotations or code-first DTOs. Mention contract tests and publishing spec to portal/CI for breaking-change detection.
+
+**Must-know for interviews:** Thin controllers, DTOs, correct HTTP semantics, and `@RestControllerAdvice` error contract.
 

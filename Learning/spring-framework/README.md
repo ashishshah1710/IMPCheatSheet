@@ -403,3 +403,35 @@ public class UserController {
 
 👉 **[Start with Core Concepts →](01-core-concepts/README.md)**
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Spring is a container that creates and wires your objects so you focus on business logic, not `new` everywhere.
+- IoC means Spring controls object lifecycle; DI means dependencies are passed in (usually via constructors).
+- MVC, data access, transactions, AOP, and security are layered modules you combine in real apps.
+- At 3–5 years experience, interviews expect you to explain *why* Spring solves coupling, testing, and cross-cutting concerns—not just annotation names.
+
+## 🎯 Interview Quick Prep
+
+### Q1: What problem does Spring Framework solve?
+
+**Simple Answer:** It centralizes object creation and wiring (IoC/DI), so classes depend on interfaces instead of concrete implementations. That makes code easier to test, swap implementations, and configure per environment without rewriting business logic.
+
+### Q2: IoC vs DI—what is the difference?
+
+**Simple Answer:** IoC is the principle: something else (the container) controls how objects are built and connected. DI is how Spring implements IoC—by injecting dependencies through constructors, setters, or fields. In interviews, say “IoC is the idea; DI is the mechanism.”
+
+### Q3: What should a mid-level developer know about the Spring container?
+
+**Simple Answer:** `ApplicationContext` loads beans, applies configuration, and manages scopes (mostly singleton). You should explain bean lifecycle, `@Component` scanning, and why constructor injection is preferred for required dependencies and testability.
+
+### Q4: How does Spring MVC fit into the bigger picture?
+
+**Simple Answer:** `DispatcherServlet` routes HTTP requests to controllers, which call services backed by repositories. You are not memorizing every class—show the request flow and where validation, exceptions, and transactions sit in the stack.
+
+### Q5: What production topics come up most for Spring interviews?
+
+**Simple Answer:** `@Transactional` behavior (propagation, rollback rules), exception handling strategy, N+1 queries with JPA, and basic security (auth vs authorization). Tie answers to incidents you debugged: slow APIs, wrong transaction boundaries, or leaked sessions.
+
+**Must-know for interviews:** Explain IoC/DI, bean scopes, MVC request flow, and `@Transactional` propagation with a real example from your projects.

@@ -691,3 +691,36 @@ List<Integer> topologicalSort(int n, int[][] edges) {
 
 **💡 Pro Tip**: Once you master these 15 patterns, you'll be able to solve most interview questions by pattern recognition!
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Most interview problems map to ~15 patterns—not 500 unique tricks.
+- Read the problem → match signal words (“substring”, “top K”, “connected”) → pick pattern.
+- Mastering patterns means faster brute-force upgrades and fewer dead ends.
+- This section is your cheat sheet for “which tool when.”
+
+## 🎯 Interview Quick Prep
+
+### Q1: “Subarray sum equals K”—which pattern?
+
+**Simple Answer:** Prefix sum + hash map counting prefix frequencies—turns O(n²) into O(n). Signal: contiguous subarray sum/count constraints.
+
+### Q2: “Top K frequent elements”—which pattern?
+
+**Simple Answer:** Min-heap of size K or bucket sort by frequency. Signal: “K largest/smallest/most common” without full sort of n if k ≪ n.
+
+### Q3: “Number of islands”—which pattern?
+
+**Simple Answer:** Grid DFS/BFS or Union-Find for connected components. Signal: 2D grid, 4/8-direction connectivity, count regions.
+
+### Q4: “Merge K sorted lists”—which pattern?
+
+**Simple Answer:** K-way merge with min-heap—classic heap pattern. Signal: multiple sorted sequences, smallest overall next value.
+
+### Q5: How do you practice patterns effectively?
+
+**Simple Answer:** For each pattern solve 5 easies → 5 mediums → 1 hard; tag every problem in your tracker. In interviews, say the pattern name aloud (“this is sliding window”) then code.
+
+**Must-know for interviews:** Map problem signals to the 15 patterns table in this doc—especially two pointers, sliding window, heap, and DP families.
+

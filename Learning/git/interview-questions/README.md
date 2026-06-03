@@ -361,3 +361,33 @@ Choose based on team size and release frequency.
 
 **[← Back to Main](../README.md)**
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Git interview questions test whether you understand **workflow and recovery**, not just command spelling. Expect scenarios: botched merge, lost commit, diverged branches, dirty working tree before hotfix. Strong answers mention **safety** (backup branch), **communication** on shared branches, and **clean history** habits.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. How revert a bad commit already pushed?
+
+**Simple Answer:** Prefer `git revert <sha>` which adds a new commit undoing changes—safe on shared branches. Avoid `git push --force` on `main` unless team policy allows.
+
+### 2. Explain detached HEAD.
+
+**Simple Answer:** HEAD points directly to a commit, not a branch name. Commits made there can become orphaned unless you create a branch to keep them.
+
+### 3. When not to use rebase?
+
+**Simple Answer:** On branches others have based work on, or on public `main`—rebasing rewrites SHAs and forces painful force-pushes for collaborators.
+
+### 4. How fix wrong commit message on last commit?
+
+**Simple Answer:** `git commit --amend` if not pushed. If pushed, amend only with team agreement or use revert for shared history.
+
+### 5. What is the difference between `git reset` modes?
+
+**Simple Answer:** `--soft` keeps changes staged, `--mixed` unstages but keeps files, `--hard` discards working changes—dangerous on shared repos.

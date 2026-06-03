@@ -433,3 +433,33 @@ git revert -m 1 <merge-commit-hash>
 
 **👉 Next:** [Collaboration →](../03-collaboration/README.md)
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Branches are movable pointers to commits. **`git branch`** creates, **`git checkout`** or **`switch`** moves you, **`merge`** combines histories (may create merge commits), **`rebase`** replays commits on another base for linear history. **Conflicts** happen when two edits touch the same lines—you resolve manually then continue.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. Merge vs rebase?
+
+**Simple Answer:** Merge preserves both histories with a merge commit. Rebase replays your commits on top of another branch for a straight line—do not rebase shared public branches others already pulled.
+
+### 2. What is a merge conflict?
+
+**Simple Answer:** Git cannot auto-combine overlapping edits. You open the file, pick correct code, `git add`, then `git merge --continue` or finish rebase.
+
+### 3. What is `git cherry-pick`?
+
+**Simple Answer:** Applies a specific commit from another branch onto your current branch—useful for hotfixing production without merging a whole feature branch.
+
+### 4. Fast-forward merge?
+
+**Simple Answer:** When the target branch has no new commits, Git just moves the pointer forward—no merge commit needed.
+
+### 5. Delete branch after merge?
+
+**Simple Answer:** Yes on feature branches after merge to keep the repo tidy. `git branch -d` deletes local; remote delete is separate on GitHub.

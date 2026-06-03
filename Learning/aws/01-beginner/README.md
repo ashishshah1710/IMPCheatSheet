@@ -721,3 +721,33 @@ Move to: `aws/02-intermediate/`
 
 Good luck with your AWS journey! ☁️
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+AWS is Amazon's cloud: you rent **compute** (EC2), **storage** (S3), and **databases** (RDS) over the internet instead of buying servers. Resources live in **Regions** (geography) and **Availability Zones** (isolated data centers). **IAM** controls who can do what; the **Free Tier** lets you practice cheaply. Think of it as paying for what you use, scaling up or down as traffic changes.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is AWS in one sentence?
+
+**Simple Answer:** AWS is a collection of on-demand cloud services—compute, storage, networking, databases, and more—billed by usage across global regions.
+
+### 2. What is the difference between Region and Availability Zone?
+
+**Simple Answer:** A Region is a geographic area (e.g. us-east-1). An AZ is an isolated data center within that region. Multi-AZ deployments improve availability if one AZ fails.
+
+### 3. What is EC2?
+
+**Simple Answer:** Elastic Compute Cloud (EC2) provides virtual servers you launch with an AMI, instance type, and security group. You pay for running hours and can auto-scale with Auto Scaling groups.
+
+### 4. What is S3 used for?
+
+**Simple Answer:** Simple Storage Service (S3) is object storage for files, backups, static websites, and data lakes. Buckets are globally unique names; objects have keys and optional versioning.
+
+### 5. What is IAM?
+
+**Simple Answer:** Identity and Access Management defines users, roles, and policies (least privilege). Applications use IAM roles instead of long-lived access keys on servers.

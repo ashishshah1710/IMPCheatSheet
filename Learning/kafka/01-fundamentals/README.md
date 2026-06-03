@@ -422,3 +422,42 @@ Offset is:
 
 **Continue to Producers & Consumers for deep dive!** 🚀
 
+---
+
+## 📖 Simple Explanation
+
+Kafka fundamentals cover brokers, topics, partitions, offsets, producers, consumers, consumer groups, and KRaft vs ZooKeeper. You learn the event log mental model that underpins every advanced feature.
+
+Backend interviews start here: draw a topic with partitions, show how keys route to partitions, and explain why consumer count beyond partitions does not increase parallelism.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: What is a Kafka topic?
+
+**Simple Answer:**
+A topic is a named stream of records divided into partitions. Producers write to topics; consumers read from them.
+
+### Q2: What is an offset?
+
+**Simple Answer:**
+An offset is a position in a partition log. Consumers commit offsets to remember what they already processed.
+
+### Q3: What is the role of a broker?
+
+**Simple Answer:**
+A broker stores partition data and serves produce/fetch requests. A cluster is many brokers for scale and fault tolerance.
+
+### Q4: Partition vs topic—what is the relationship?
+
+**Simple Answer:**
+A topic has one or more partitions. More partitions mean more parallel writers and consumers, but also more files and coordination overhead.
+
+### Q5: What is KRaft?
+
+**Simple Answer:**
+KRaft is Kafka metadata quorum without ZooKeeper. New clusters simplify operations by using built-in Raft-based controllers for leader election and metadata.
+

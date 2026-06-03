@@ -416,3 +416,42 @@ public class UserService {
 
 👉 **[Start with Fundamentals →](01-fundamentals/README.md)**
 
+---
+
+## 📖 Simple Explanation
+
+Couchbase is an enterprise NoSQL database that combines fast key-value access, JSON documents, SQL-like N1QL queries, and built-in full-text search. Its memory-first design targets low-latency interactive apps such as session stores, catalogs, and mobile-backed services.
+
+In Java enterprises you often see Couchbase with Spring Data for caching plus primary document storage, or when teams want SQL familiarity on JSON and integrated caching without a separate Redis layer.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: How is Couchbase different from MongoDB for backend teams?
+
+**Simple Answer:**
+Couchbase emphasizes memory-first latency, N1QL, and integrated caching and search. MongoDB emphasizes flexible document APIs and a large ecosystem; choice depends on latency, query style, and ops maturity.
+
+### Q2: What are buckets, scopes, and collections?
+
+**Simple Answer:**
+They are logical namespaces like database, schema, and table in SQL terms. They organize multi-tenant data and security boundaries in a cluster.
+
+### Q3: What is N1QL?
+
+**Simple Answer:**
+N1QL is SQL for JSON documents in Couchbase. Backend developers can write familiar SELECT, JOIN, and GROUP BY while still storing flexible documents.
+
+### Q4: What is XDCR?
+
+**Simple Answer:**
+Cross Datacenter Replication copies data between clusters in different regions for disaster recovery and geo read patterns, with conflict handling policies you must design for.
+
+### Q5: When would you use Couchbase in a Spring Boot microservice?
+
+**Simple Answer:**
+When you need sub-millisecond reads, document storage, and SQL-like reporting in one platform—for example product catalog, personalization, or session-heavy B2C APIs with Spring Data Couchbase repositories.
+

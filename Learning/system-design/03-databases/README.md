@@ -605,3 +605,33 @@ posts: id, user_id, user_name, content, comment_count
 
 **💡 Pro Tip**: In interviews, there's no "best" database. Always discuss trade-offs based on requirements: consistency vs availability, read vs write patterns, scaling needs!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Database design picks **storage engine**, **schema**, **indexing**, and **scaling pattern**. **Normalization** reduces duplication; **denormalization** speeds reads. **Replication** for availability/reads; **sharding** for write scale. **ACID** transactions vs **BASE** in many NoSQL systems—match choice to consistency needs.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. ACID meaning?
+
+**Simple Answer:** Atomicity (all or nothing), Consistency (rules hold), Isolation (concurrent txs behave), Durability (committed survives crash)—hallmark of relational DBs.
+
+### 2. Index trade-off?
+
+**Simple Answer:** Indexes speed reads but slow writes and use disk—index columns you filter/join on, not everything.
+
+### 3. Master-slave replication?
+
+**Simple Answer:** One primary accepts writes; replicas stream changes for reads and failover. Watch replication lag for read-your-writes issues.
+
+### 4. When denormalize?
+
+**Simple Answer:** When read performance and simplicity beat storage cost—e.g. embed comment count on a post document to avoid COUNT(*) every feed load.
+
+### 5. SQL vs document store example?
+
+**Simple Answer:** Orders with strict inventory use SQL transactions. Product catalog with varying attributes fits document DB like MongoDB.

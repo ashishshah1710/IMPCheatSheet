@@ -591,3 +591,33 @@ Move to: `docker/03-advanced/`
 - Docker in production
 - CI/CD pipelines
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+A **Dockerfile** is a step-by-step recipe to build your own image: base image (`FROM`), install deps (`RUN`), copy code (`COPY`), set the start command (`CMD`/`ENTRYPOINT`). **Docker Compose** runs multi-container apps (e.g. app + database) from one YAML file with networks and volumes wired together. **Volumes** persist data outside the container lifecycle; **bind mounts** map host folders into the container for development.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is a Dockerfile and what does `FROM` do?
+
+**Simple Answer:** A Dockerfile lists instructions to build an image. `FROM` sets the base image (e.g. `node:20-alpine`). Every later layer builds on top of that base.
+
+### 2. What is the difference between `CMD` and `ENTRYPOINT`?
+
+**Simple Answer:** `ENTRYPOINT` defines the main executable that always runs; `CMD` supplies default arguments that users can override. Together they define how the container starts when you `docker run` without extra args.
+
+### 3. Why use Docker Compose?
+
+**Simple Answer:** Compose defines multiple services, networks, and volumes in one file so you can start the whole stack with `docker compose up`. It is ideal for local dev with app, DB, cache, and consistent env vars.
+
+### 4. What is a Docker volume vs a bind mount?
+
+**Simple Answer:** A volume is managed by Docker and survives container deletion—good for database data. A bind mount maps a host path into the container—good for live code reload during development.
+
+### 5. How do you reduce image size in a Dockerfile?
+
+**Simple Answer:** Use slim base images (Alpine), combine `RUN` steps to fewer layers, use `.dockerignore`, avoid copying build artifacts, and prefer multi-stage builds in production (covered in advanced).

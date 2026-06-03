@@ -667,3 +667,33 @@ Move to: `kubernetes/02-intermediate/`
 - Ingress
 - Advanced networking
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Kubernetes (K8s) is a **control plane** that schedules your containers across a cluster of machines. You declare desired state in YAML (Pods, Deployments, Services); the cluster keeps reality matching that state—restarting failed pods, scaling replicas, and load-balancing traffic. A **Pod** is the smallest unit (one or more containers); a **Deployment** manages replica sets; a **Service** gives stable networking to pods that come and go.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What problem does Kubernetes solve?
+
+**Simple Answer:** It automates running containerized apps at scale: deployment, scaling, rolling updates, health checks, and networking across many nodes—so you do not manually SSH and restart containers.
+
+### 2. What is a Pod?
+
+**Simple Answer:** A Pod is one or more containers that share network and storage, scheduled together on one node. It is ephemeral; Deployments recreate pods when they die.
+
+### 3. What is a Deployment vs a Service?
+
+**Simple Answer:** A Deployment manages how many pod replicas run and handles rolling updates. A Service provides a stable IP/DNS name and load-balances traffic to pod backends, even as pod IPs change.
+
+### 4. What are `kubectl` and the control plane?
+
+**Simple Answer:** `kubectl` is the CLI to talk to the API server. The control plane (scheduler, controller manager, etcd) stores desired state and reconciles the cluster to match it.
+
+### 5. What is a Namespace?
+
+**Simple Answer:** A Namespace is a logical partition inside a cluster (e.g. `dev`, `prod`) for resources and RBAC isolation. It helps teams share one cluster without name collisions.

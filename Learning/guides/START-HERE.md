@@ -208,7 +208,7 @@ When you need help:
 
 ### ✅ Career-Focused
 - Job market aligned
-- Interview preparation
+- Interview preparation — **[Simple Explanations & Interview Prep Index](SIMPLE-EXPLANATIONS-INTERVIEW-PREP.md)** (every folder has plain-English summaries + 5 interview Q&As at the bottom)
 - Portfolio building
 
 ### ✅ Well-Organized

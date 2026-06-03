@@ -333,3 +333,33 @@ git checkout -- <file>
 
 👉 **[Start with Basics →](01-basics/README.md)**
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Git is a **distributed version control** system: every clone has full history. You **commit** snapshots locally, **branch** for features, and **merge** or **rebase** to integrate. **Remote** repos (GitHub/GitLab) let teams push/pull and review via pull requests. Git tracks *what changed*, *who changed it*, and lets you roll back safely.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is Git vs GitHub?
+
+**Simple Answer:** Git is the version control tool on your machine. GitHub (or GitLab) is a hosting service for remote repositories, collaboration, and CI—not the same as Git itself.
+
+### 2. What is a commit?
+
+**Simple Answer:** A commit is a snapshot of your project with a message and unique hash. Commits form a directed graph you can browse, revert, or cherry-pick.
+
+### 3. Why branch?
+
+**Simple Answer:** Branches isolate work (features, hotfixes) so `main` stays stable. You merge when the feature is tested, often after code review.
+
+### 4. What is `git status` and `git log` for?
+
+**Simple Answer:** `git status` shows staged/unstaged/untracked files. `git log` shows history—essential before interviews to explain how you debug or audit changes.
+
+### 5. Distributed VCS benefit?
+
+**Simple Answer:** Everyone has full history locally—fast commits offline, many backup copies, and flexible workflows (fork, PR, rebase) without a single central server bottleneck.

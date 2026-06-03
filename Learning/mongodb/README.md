@@ -543,3 +543,42 @@ public class UserService {
 
 👉 **[Start with Fundamentals →](01-fundamentals/README.md)**
 
+---
+
+## 📖 Simple Explanation
+
+MongoDB stores data as flexible JSON-like documents instead of rigid tables. In enterprise backends it is often the system of record for catalogs, user profiles, IoT events, or anything that changes shape often and must scale out horizontally.
+
+Teams pick MongoDB when they need fast iteration on schema, rich nested data, and horizontal scaling with replica sets and sharding. Spring Data MongoDB is common in Java shops, so interviews usually cover document modeling, indexes, aggregation, and how you run it safely in production (backups, monitoring, write concern).
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: When would you choose MongoDB over PostgreSQL in an enterprise service?
+
+**Simple Answer:**
+Use MongoDB when the data model is document-shaped, evolves often, or must scale writes across many nodes without heavy joins. Use PostgreSQL when you need strict relational integrity, complex reporting joins, or mature transactional workflows as the default.
+
+### Q2: How does MongoDB handle high availability?
+
+**Simple Answer:**
+A replica set keeps copies of data on multiple servers. If the primary fails, members elect a new primary so apps can keep reading and writing with minimal downtime when configured correctly.
+
+### Q3: What is the difference between embedding and referencing documents?
+
+**Simple Answer:**
+Embedding stores related data inside one document for fast reads in one query. Referencing stores an ID and loads related data separately, which avoids huge documents and duplication when many services share the same child records.
+
+### Q4: What are write concern and read preference?
+
+**Simple Answer:**
+Write concern tells the driver how many replicas must acknowledge a write before the app considers it done. Read preference routes reads to primary or secondaries, trading consistency for load distribution.
+
+### Q5: How do you integrate MongoDB with Spring Boot in production?
+
+**Simple Answer:**
+Use spring-boot-starter-data-mongodb, define @Document entities and repositories, externalize the URI in config, pool connections, add indexes for query paths, and monitor slow queries with explain() and Atlas or ops tools.
+

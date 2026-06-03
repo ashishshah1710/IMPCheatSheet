@@ -545,3 +545,42 @@ Indexes that contain all fields needed by a query, eliminating the need to fetch
 
 **Continue to Performance & Scaling for optimization!** 🚀
 
+---
+
+## 📖 Simple Explanation
+
+This module teaches N1QL: SELECT, JOIN, subqueries, array operations, full-text search, and query tuning. It bridges SQL skills with JSON document storage—common in enterprise teams migrating from relational DBs.
+
+Backend interviews often ask how JOIN works in Couchbase (USE KEYS, nested paths) and how you avoid full bucket scans in production.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: How do JOINs work in N1QL?
+
+**Simple Answer:**
+Documents join by keys or embedded references, often with USE KEYS for efficient lookups. Unlike SQL tables, you must know key patterns or document paths used in your schema design.
+
+### Q2: What is USE KEYS in a query?
+
+**Simple Answer:**
+It fetches documents directly by key list, which is very fast compared to scanning a bucket. Enterprise queries should use keys when resolving known relationships.
+
+### Q3: When do you use UNNEST?
+
+**Simple Answer:**
+UNNEST flattens an array inside a document into rows, similar to SQL unnest, so you can filter or aggregate per array element such as skills or line items.
+
+### Q4: What is Full-Text Search (FTS) in Couchbase?
+
+**Simple Answer:**
+FTS indexes text fields for relevance-ranked search. Product search and knowledge bases use it instead of slow LIKE-style scans on JSON.
+
+### Q5: How do you optimize an N1QL query?
+
+**Simple Answer:**
+Create matching secondary indexes, use covering indexes where possible, filter early, avoid SELECT *, and review the query plan in the Query Workbench or system:completed_requests.
+

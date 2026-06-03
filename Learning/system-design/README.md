@@ -428,3 +428,33 @@ Read 1 MB from network:          10,000,000 ns = 10 ms
 
 **💡 Pro Tip:** System Design interviews test your thought process, not memorization. Focus on understanding trade-offs and communicating clearly!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+System design is how you architect **large-scale software**: users, traffic, data, failures, and cost. Interviews ask you to clarify requirements, estimate scale, draw components (clients, load balancers, DB, cache, queue), and discuss **trade-offs** (SQL vs NoSQL, consistency vs availability). There is rarely one right answer—clear thinking wins.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is a system design interview testing?
+
+**Simple Answer:** Communication, requirement gathering, high-level architecture, deep dives on bottlenecks, and trade-offs—not memorizing buzzwords.
+
+### 2. How start a design question?
+
+**Simple Answer:** Clarify functional/non-functional requirements, scale (DAU, QPS, storage), constraints, then rough capacity math before drawing boxes.
+
+### 3. What is CAP theorem?
+
+**Simple Answer:** In a partition, you choose between Consistency (all nodes see same data) and Availability (every request gets a response). Partition tolerance is assumed in distributed systems.
+
+### 4. Vertical vs horizontal scaling?
+
+**Simple Answer:** Vertical: bigger machine, simpler, limit at hardware ceiling. Horizontal: more machines, needs load balancing and distributed data—standard for web scale.
+
+### 5. Why mention trade-offs?
+
+**Simple Answer:** Interviewers want to hear why you picked Redis, sharding, or async queues—and what breaks if traffic 10x overnight.

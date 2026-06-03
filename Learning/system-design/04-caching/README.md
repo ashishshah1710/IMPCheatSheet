@@ -656,3 +656,33 @@ Single key gets too many requests
 
 **💡 Pro Tip**: Start with simple cache-aside pattern. Optimize only when needed based on actual metrics!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Caching stores **frequently read data** closer to the user or app—in browser, CDN, app memory, or Redis. Patterns: **cache-aside**, **write-through**, **write-behind**. Watch **TTL**, **invalidation**, and **thundering herd** when hot keys expire. Cache is not source of truth unless you design it carefully.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. Cache-aside vs write-through?
+
+**Simple Answer:** Cache-aside: app manages cache on read/write. Write-through: writes go to cache and DB together—simpler consistency, slower writes.
+
+### 2. What is cache stampede?
+
+**Simple Answer:** Many requests miss cache at once and hammer DB. Mitigate with locks, request coalescing, or staggered TTL jitter.
+
+### 3. Redis use cases?
+
+**Simple Answer:** Session store, rate limiting, leaderboards, pub/sub, hot object cache—in-memory speed with optional persistence.
+
+### 4. When not to cache?
+
+**Simple Answer:** Highly personalized or rapidly changing data where stale reads hurt—e.g. bank balance without strict invalidation.
+
+### 5. CDN vs application cache?
+
+**Simple Answer:** CDN serves static/geographic edge caching. App cache (Redis) holds dynamic API results or computed aggregates closer to servers.

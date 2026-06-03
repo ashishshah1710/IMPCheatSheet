@@ -300,3 +300,36 @@ public int lengthOfLIS(int[] nums) {
 
 **💡 Pro Tip:** DP is hard! Start with easy problems, identify patterns, and gradually progress. Don't get discouraged!
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- DP = remember subproblem answers so you don’t recompute the same work.
+- Need overlapping subproblems + optimal substructure (best big answer built from best small answers).
+- Start with recursion + memoization; convert to bottom-up tabulation when space pattern is clear.
+- Classic families: Fibonacci-style, knapsack, LCS, LIS, palindrome DP.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How do you recognize a DP problem?
+
+**Simple Answer:** Ask “if I know optimal answer for smaller input, can I build optimal for current?” and “do subproblems repeat?” If yes, try memo on recursive states defined by indices/parameters.
+
+### Q2: Top-down vs bottom-up?
+
+**Simple Answer:** Top-down (memoized recursion) is faster to write; bottom-up fills table iteratively, often easier to optimize space (rolling array). Same complexity if state space matches.
+
+### Q3: 0/1 knapsack in one sentence?
+
+**Simple Answer:** For each item, DP at capacity c is max(skip, take + best at c-weight). Each item used once—inner loop capacities backward in 1D optimization.
+
+### Q4: LCS vs edit distance?
+
+**Simple Answer:** Longest common subsequence compares two strings without reordering chars. Edit distance adds insert/delete/replace costs—both are 2D DP tables on prefixes.
+
+### Q5: How to explain space optimization?
+
+**Simple Answer:** If DP only depends on previous row or last few states, keep 1–2 rows instead of full matrix—O(n) space instead of O(n²). Mention tradeoff readability vs memory.
+
+**Must-know for interviews:** Define state, recurrence, base case; knapsack and LCS templates; memo vs tabulation.
+

@@ -748,3 +748,33 @@ Draw components and data flow
 
 **💡 Pro Tip**: There's no single "correct" answer in system design. Show your thought process, discuss trade-offs, and be ready to adapt based on requirements!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+This section catalogs **classic prompts** (Twitter, Uber, rate limiter, web crawler) with structured approaches. Success means **structured communication**: requirements, estimates, diagram, then depth on the riskiest part. Avoid jumping to Kafka/Redis without justification.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. First 5 minutes of system design interview?
+
+**Simple Answer:** Ask clarifying questions: users, features, scale, latency, consistency, budget. Agree on scope before drawing.
+
+### 2. How estimate QPS and storage?
+
+**Simple Answer:** DAU × actions per day / 86400 for average QPS; peak ~2-10x. Storage = items × size × retention × replication factor.
+
+### 3. Rate limiter design sketch?
+
+**Simple Answer:** Token bucket or sliding window per user/IP in Redis, return 429 when exceeded, optional sync across nodes.
+
+### 4. Common pitfall?
+
+**Simple Answer:** Over-engineering microservices on day one, ignoring single points of failure, or skipping monitoring and operational concerns.
+
+### 5. How end strong?
+
+**Simple Answer:** Summarize architecture, list bottlenecks, propose phase 2 improvements, and state what you'd monitor in production.

@@ -531,3 +531,36 @@ int ccw(Point a, Point b, Point c) {
 
 **💡 Pro Tip**: These topics separate mid-level from senior engineers in interviews. Master at least 3-4 of these for FAANG!
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Tries speed up prefix/word lookups (autocomplete, dictionary).
+- Heaps give fast min/max—top K problems and scheduling.
+- Union-Find, segment trees, and string algorithms (KMP) are specialty tools for harder rounds.
+- You don’t need every advanced DS—know 3–4 deeply and when they beat hash maps.
+
+## 🎯 Interview Quick Prep
+
+### Q1: Trie vs hash map for words?
+
+**Simple Answer:** Hash map O(1) exact lookup; trie excels prefix search (“all keys starting with ‘app’”) and shared prefixes save space. Pick trie when prefix/autocomplete is core.
+
+### Q2: When is a heap the right tool?
+
+**Simple Answer:** K largest/smallest, merge K sorted lists, scheduling by priority. Min-heap of size K keeps O(n log k) instead of sorting all O(n log n).
+
+### Q3: Union-Find vs DFS for connectivity?
+
+**Simple Answer:** Both work offline; Union-Find shines with many union queries streaming in. DFS simpler for one-shot “count islands” on grid.
+
+### Q4: What problem does KMP solve?
+
+**Simple Answer:** Linear-time pattern search in text by reusing partial match info (LPS array)—avoids restarting from scratch. Mention when brute force O(n·m) is too slow on long strings.
+
+### Q5: Do you need segment trees for most interviews?
+
+**Simple Answer:** No—many range queries use prefix sums or difference arrays. Segment trees help dynamic range min/max/sum updates—mention if you’ve seen LeetCode hard range problems.
+
+**Must-know for interviews:** Heap for top K, trie for prefixes, Union-Find for connectivity, and when advanced DS beats brute force.
+

@@ -518,3 +518,42 @@ Cross Data Center Replication - replicates data between clusters. Use for:
 
 **Continue to Spring Boot Integration for application development!** 🚀
 
+---
+
+## 📖 Simple Explanation
+
+Performance and scaling covers monitoring, index tuning, caching, replication, sharding, XDCR, backups, and production practices. Enterprise roles expect you to explain how a Couchbase cluster stays fast under load and survives node failures.
+
+Rebalancing spreads data when nodes join or leave; replication factors control how many copies exist for failover.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: What metrics matter for Couchbase performance?
+
+**Simple Answer:**
+Ops per second, cache hit ratio, memory used vs quota, disk I/O, query latency, replication lag, and rebalance progress. Spikes in evictions signal memory pressure.
+
+### Q2: What is cluster rebalancing?
+
+**Simple Answer:**
+When topology changes, Couchbase moves vbucket data between nodes to keep distribution even. Plan rebalances during maintenance windows because they consume network and CPU.
+
+### Q3: How does replication protect availability?
+
+**Simple Answer:**
+Each vbucket has active and replica copies on different nodes. If a node fails, replicas promote so reads and writes continue after failover.
+
+### Q4: When would you use XDCR?
+
+**Simple Answer:**
+Use XDCR for disaster recovery, multi-region setups, or migrating clusters. Design conflict resolution because the same key can be updated in two places.
+
+### Q5: How do you size memory for a bucket?
+
+**Simple Answer:**
+Estimate working set size of hot keys plus headroom for indexes and overhead. Undersized buckets cause evictions and latency jumps even if disk is large.
+

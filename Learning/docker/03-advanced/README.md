@@ -662,3 +662,33 @@ jobs:
 
 **Master Docker for enterprise production systems!** 🚀
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+**Multi-stage builds** compile in one stage and copy only the binary into a small runtime image—smaller attack surface and faster deploys. **Production Docker** means non-root users, health checks, resource limits, secrets outside images, and scanning for CVEs. **Networking** (bridge, overlay, custom networks) controls how containers talk; orchestrators like Kubernetes often replace Swarm for large clusters.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is a multi-stage Docker build?
+
+**Simple Answer:** You use multiple `FROM` stages: e.g. Maven builds the JAR in stage one, and a slim JRE image copies only the JAR in the final stage. The final image excludes compilers and source, so it stays small and secure.
+
+### 2. How do you improve Docker security in production?
+
+**Simple Answer:** Run as non-root, use minimal base images, scan images, do not bake secrets into images, use read-only filesystems where possible, pin image digests, and keep the Docker daemon patched.
+
+### 3. Docker vs Kubernetes—when use which?
+
+**Simple Answer:** Docker (or container runtime) runs individual containers. Kubernetes orchestrates many containers across nodes: scheduling, scaling, self-healing, service discovery. Docker alone fits small deployments; K8s fits large, dynamic fleets.
+
+### 4. What is Docker layer caching and why does order matter?
+
+**Simple Answer:** Each Dockerfile instruction creates a layer; unchanged layers reuse cache on rebuild. Put rarely changing steps (base image, dependencies) before frequently changing steps (app source) to speed CI builds.
+
+### 5. How does Docker fit into CI/CD?
+
+**Simple Answer:** CI builds and tags images, runs tests in containers, pushes to a registry, and CD pulls the same immutable tag to deploy. Immutable tags ensure dev and prod run identical artifacts.

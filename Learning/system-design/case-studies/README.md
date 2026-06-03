@@ -506,3 +506,33 @@ When asked "Design X":
 
 **💡 Pro Tip**: Study how real companies solve problems. In interviews, reference these examples to show real-world knowledge!
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Case studies show how **real companies** solved scale: Twitter's fanout, Instagram's photo CDN, Netflix's microservices and CDN, Uber's geospatial dispatch. Studying them gives **credible examples** in interviews and shows you understand **why** choices were made, not just generic diagrams.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. Why study Twitter/Instagram architectures?
+
+**Simple Answer:** They illustrate feed fanout, media storage, and caching at scale—patterns reused in many social and content products.
+
+### 2. Netflix chaos engineering lesson?
+
+**Simple Answer:** Deliberately inject failures to prove resilience—design for failure, not happy path only.
+
+### 3. Uber dispatch idea?
+
+**Simple Answer:** Match riders and drivers using geospatial indexes and regional partitioning—low latency location updates matter.
+
+### 4. WhatsApp Erlang choice?
+
+**Simple Answer:** Massive concurrent connections per server—language/runtime fit matters for connection-heavy chat.
+
+### 5. How reference a case study in interview?
+
+**Simple Answer:** Briefly name the company pattern (e.g. hybrid fanout), tie to your design's requirements, admit differences in scale.

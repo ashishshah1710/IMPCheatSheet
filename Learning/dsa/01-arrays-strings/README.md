@@ -487,3 +487,36 @@ public List<List<String>> groupAnagrams(String[] strs) {
 3. **Edge Cases**: Empty array, single element, all same elements
 4. **Clarifying Questions**: Are there duplicates? Is array sorted?
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Arrays store items in a row—fast index access, but inserting in the middle is expensive.
+- Two pointers shrink nested loops when the array is sorted or you need pairs from both ends.
+- Sliding window tracks a moving range for “longest/shortest subarray with property X.”
+- Strings are arrays of characters—many tricks reuse array patterns (hash map counts, two pointers).
+
+## 🎯 Interview Quick Prep
+
+### Q1: When do you use two pointers vs sliding window?
+
+**Simple Answer:** Two pointers often solve pair-sum, palindrome, or merge sorted arrays. Sliding window optimizes contiguous subarray problems (max sum of size k, longest substring without repeat). Both usually turn O(n²) into O(n).
+
+### Q2: Why is a hash map the default array helper?
+
+**Simple Answer:** It gives O(1) average lookups for “have we seen complement/value before?”—classic Two Sum. Trade extra O(n) space for O(n) time instead of nested loops.
+
+### Q3: Kadane’s algorithm in plain English?
+
+**Simple Answer:** Walk the array keeping the best sum ending at current index; reset when running sum goes negative. Answers “maximum subarray sum” in O(n) time, O(1) space.
+
+### Q4: Common string interview traps?
+
+**Simple Answer:** Immutability in Java (StringBuilder for many edits), Unicode vs ASCII if relevant, empty string, all same char, case sensitivity. Anagram problems → frequency map or sort.
+
+### Q5: What edge cases must you mention aloud?
+
+**Simple Answer:** Empty input, length 1, all negatives (Kadane still works), integer overflow if sums are huge, duplicates changing uniqueness rules. Say them before coding—interviewers score process.
+
+**Must-know for interviews:** Two pointers, sliding window, hash map for frequency/complement, and Kadane for max subarray.
+

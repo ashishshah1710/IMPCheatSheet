@@ -149,3 +149,35 @@ public PasswordEncoder passwordEncoder() {
 
 **[← Back to Main](../README.md)**
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Good Spring code is testable: constructor injection and thin controllers make unit tests fast.
+- Transactions belong on the service layer where business rules and boundaries are clear.
+- Never leak JPA entities on REST APIs—DTOs protect your schema and versioning story.
+- Global exception handlers and validation give APIs a professional, consistent contract.
+
+## 🎯 Interview Quick Prep
+
+### Q1: Why do teams ban field `@Autowired`?
+
+**Simple Answer:** Hidden dependencies, harder unit tests, and no immutability. Constructor injection documents required collaborators and fails fast at startup if a bean is missing—interviewers expect you to defend this with testing examples.
+
+### Q2: Where should `@Transactional` live?
+
+**Simple Answer:** On service-layer methods that define business transactions, not controllers or repositories. Controllers should stay thin; multiple repository calls in one use case belong in one transactional service method.
+
+### Q3: Why use DTOs in REST APIs?
+
+**Simple Answer:** DTOs decouple persistence model from API contract, prevent over-fetching/lazy-load leaks, and let you evolve the database without breaking clients. Map with MapStruct or explicit mappers—mention performance and clarity.
+
+### Q4: What makes exception handling “production ready”?
+
+**Simple Answer:** One `@RestControllerAdvice`, mapped exception types, stable error JSON (code, message, trace id), correct HTTP status, and no stack traces to clients. Log full details server-side with correlation IDs.
+
+### Q5: Security practices you should mention in interviews?
+
+**Simple Answer:** BCrypt (or stronger) for passwords, never commit secrets, validate all input, least-privilege roles, HTTPS only, and secure headers/CORS. Tie to OWASP awareness and secrets managers in cloud deploys.
+
+**Must-know for interviews:** Constructor injection, service-layer transactions, DTOs, and centralized exception handling.

@@ -559,3 +559,42 @@ db.query("SELECT * FROM users WHERE username = $1", [userInput])
 
 **💡 Pro Tip**: Master the basics (CRUD, joins, indexes) first. Advanced features like JSON and full-text search come later!
 
+---
+
+## 📖 Simple Explanation
+
+Relational databases (PostgreSQL and MySQL) remain the default system of record in enterprise backends. Tables, SQL, ACID transactions, joins, and indexes fit billing, accounts, inventory, and reporting where structure and integrity matter.
+
+This guide compares Postgres and MySQL, covers CRUD, joins, aggregates, indexes, transactions, and Postgres extras like JSONB—skills expected in almost every backend interview.
+
+---
+
+## 🎯 Interview Quick Prep
+
+*Backend and enterprise interview focus — plain-English answers.*
+
+### Q1: PostgreSQL vs MySQL for a new enterprise service?
+
+**Simple Answer:**
+Choose PostgreSQL for complex queries, strong extensions, JSONB, and strict standards compliance. Choose MySQL when the org standardizes on it, needs simple read-heavy web workloads, or has mature DBA tooling.
+
+### Q2: What is ACID and why do enterprises care?
+
+**Simple Answer:**
+Atomicity, Consistency, Isolation, Durability guarantee money-moving operations complete correctly under concurrency and crashes—why OLTP stays relational.
+
+### Q3: When should you add an index?
+
+**Simple Answer:**
+Index columns used in WHERE, JOIN, and ORDER BY on large tables. Too many indexes slow writes; composite index column order must match query patterns.
+
+### Q4: What is the difference between INNER and LEFT JOIN?
+
+**Simple Answer:**
+INNER JOIN returns only matching rows from both tables. LEFT JOIN keeps all left rows and null-fills right when no match—common for optional related data like orders per user.
+
+### Q5: How do you prevent SQL injection?
+
+**Simple Answer:**
+Always use parameterized queries or prepared statements from JDBC, JPA, or drivers—never concatenate user input into SQL strings.
+

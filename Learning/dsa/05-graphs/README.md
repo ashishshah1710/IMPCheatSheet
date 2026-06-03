@@ -501,3 +501,36 @@ boolean isBipartite(List<List<Integer>> graph) {
 
 **💡 Pro Tip**: Most graph problems can be solved with DFS/BFS variations. Master these first before learning specialized algorithms!
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Graphs are nodes (vertices) connected by edges—social networks, maps, and dependencies are graphs.
+- Represent with adjacency list (sparse) or matrix (dense)—list is default in interviews.
+- BFS finds shortest steps in unweighted graphs; DFS explores paths and connected components.
+- Directed vs undirected and weighted vs unweighted change which algorithm applies.
+
+## 🎯 Interview Quick Prep
+
+### Q1: BFS vs DFS—when to use which?
+
+**Simple Answer:** BFS for shortest path in unweighted graph or level-by-level expansion. DFS for exploring all paths, cycle detection in directed graph (with colors), or connected components. Both O(V + E) with adjacency list.
+
+### Q2: How do you detect a cycle in an undirected graph?
+
+**Simple Answer:** DFS/BFS with parent tracking—if you visit an already visited node that isn’t parent, cycle exists. Union-Find also works for dynamic connectivity.
+
+### Q3: Topological sort in plain English?
+
+**Simple Answer:** Linear ordering of DAG where every edge goes forward—use Kahn’s BFS (in-degree) or DFS post-order stack. Answers course prerequisites and build order problems.
+
+### Q4: Dijkstra vs BFS?
+
+**Simple Answer:** BFS when all edges cost 1. Dijkstra for non-negative weighted shortest path—priority queue picks smallest distance next. Mention Bellman-Ford only if negative edges allowed.
+
+### Q5: Union-Find use case?
+
+**Simple Answer:** Tracks connected components with near O(1) union/find (with path compression). Great for “are these nodes connected?”, Kruskal MST, or grid islands.
+
+**Must-know for interviews:** Adjacency list, BFS shortest path unweighted, cycle detection, and topological sort for DAGs.
+

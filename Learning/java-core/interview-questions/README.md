@@ -1862,3 +1862,32 @@ System.out.println(i3 == i4); // false
 
 **Good Luck! 🎯**
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- This folder is a curated Q&A bank — OOP, strings, collections, exceptions, threads, Java 8+, memory, and tricky puzzles.
+- Each answer uses plain language and examples so you can explain concepts aloud in an interview, not just read code.
+- Use it for spaced repetition: read a topic, close the file, and explain it in your own words.
+- Pair with beginner/intermediate guides for depth; use this file for rapid recall before mock interviews.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How should I use this interview-questions README effectively?
+**Simple Answer:** Pick one section per day, read the simple explanation, then practice answering without looking. For coding topics (HashMap, threads), sketch a diagram or 10 lines of code from memory.
+
+### Q2: What are the highest-frequency Java core topics in interviews?
+**Simple Answer:** OOP pillars, `equals`/`hashCode`, String pool and immutability, collections (especially HashMap and ArrayList vs LinkedList), exception types, thread basics and `synchronized`, and Java 8 lambdas/streams/Optional.
+
+### Q3: Why do interviewers ask "what is the output?" trick questions?
+**Simple Answer:** They test whether you understand references, string pool, autoboxing cache (-128 to 127), and operator precedence — not memorization. Always trace references vs values step by step.
+
+### Q4: How do I answer when I don't know something?
+**Simple Answer:** Say what you do know, how you would find out (docs, JDK source, debugging), and relate to something similar you have used. Honesty plus a learning approach beats guessing.
+
+### Q5: What's the difference between this file and the intermediate README Q&A?
+**Simple Answer:** This file is interview-first with "Simple Explanation" framing and more tricky/output questions. The intermediate guide teaches topics in depth with longer code samples — use both together.
+
+**Must-know for interviews:** Practice explaining HashMap, immutability of String, and deadlock prevention out loud — they appear in most Java rounds.
+
+

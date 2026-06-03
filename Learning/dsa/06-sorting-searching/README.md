@@ -506,3 +506,36 @@ Treat 2D as 1D array
 
 **💡 Pro Tip**: Master binary search variations - they appear in 30%+ of coding interviews!
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Sorting arranges data so you can search faster—binary search needs sorted order.
+- Merge sort is stable O(n log n); quicksort is fast in practice but worst O(n²) without care.
+- Binary search isn’t only for arrays—it searches an answer space (min max that works).
+- Know when O(n log n) is the best comparison-based sort limit.
+
+## 🎯 Interview Quick Prep
+
+### Q1: When can you use binary search?
+
+**Simple Answer:** Sorted array or monotonic predicate (“can we ship in D days?”). Maintain `lo`, `hi`, mid; shrink range based on condition. Watch off-by-one and infinite loops (`mid = lo + (hi-lo)/2`).
+
+### Q2: Merge sort vs quicksort interview answer?
+
+**Simple Answer:** Merge sort guaranteed O(n log n), stable, needs O(n) extra space. Quicksort in-place average O(n log n), cache-friendly; pivot choice matters. Java `Arrays.sort` uses tuned hybrid (Timsort for objects).
+
+### Q3: What does “search on answer” mean?
+
+**Simple Answer:** Instead of searching indices, binary search the minimum feasible value (capacity, speed, time) where `feasible(x)` is monotonic. Common in allocation and minimization problems.
+
+### Q4: Lower bound vs upper bound?
+
+**Simple Answer:** Lower bound = first index with value ≥ target; upper bound = first > target. Helps “count occurrences” and insert position—C++ `lower_bound` style thinking.
+
+### Q5: Sorting stability—why care?
+
+**Simple Answer:** Stable sort keeps equal elements’ relative order—important when sorting by one key then another (sort names then grade). Merge sort stable; quicksort typically not unless extra work.
+
+**Must-know for interviews:** Binary search template, search-on-answer pattern, and O(n log n) sorting tradeoffs.
+

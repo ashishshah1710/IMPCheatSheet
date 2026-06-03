@@ -626,3 +626,32 @@ java -XX:+UseG1GC \
 
 **Master GC for optimal performance!** 🚀
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Garbage collection automatically frees memory for objects you no longer use — you rarely call `delete` in Java.
+- New objects start in Eden; survivors move through Survivor spaces; long-lived objects end up in Old generation.
+- Different GC algorithms trade pause time vs throughput (Serial, Parallel, G1, ZGC).
+- Tuning means choosing the right collector and heap sizes for your app's latency and load.
+
+## 🎯 Interview Quick Prep
+
+### Q1: How does garbage collection know an object can be removed?
+**Simple Answer:** An object is eligible when no live reference points to it (null, out of scope, or reassigned). GC traces reachable objects from roots (stack locals, static fields, JNI). Unreachable objects are collected.
+
+### Q2: Minor GC vs Major GC?
+**Simple Answer:** Minor GC cleans the young generation (Eden + Survivors) — frequent and usually fast. Major/Full GC involves old generation (and often more of the heap) — slower pauses. Promotion moves survivors to old gen.
+
+### Q3: What is the load factor in HashMap vs heap load factor in GC?
+**Simple Answer:** In HashMap, load factor (0.75) triggers resize. In GC context, people often mean heap occupancy triggering collection — e.g. G1's mixed GC when old regions fill. Do not confuse the two in interviews.
+
+### Q4: Name one GC and when you would use it.
+**Simple Answer:** G1: default for many server apps, balances pauses and throughput. ZGC: very low pauses on large heaps. Parallel: batch jobs maximizing throughput. Serial: small single-threaded apps.
+
+### Q5: Common causes of memory leaks in Java?
+**Simple Answer:** Static collections growing forever, listeners not removed, ThreadLocal not cleared, unclosed streams, and caches without eviction. Leaks are lingering references, not GC "failing."
+
+**Must-know for interviews:** Explain young/old/metaspace and one OOM type (heap space vs metaspace vs unable to create native thread).
+
+

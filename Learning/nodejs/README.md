@@ -386,3 +386,33 @@ Before moving to intermediate:
 
 **Happy Coding with Node.js! 🟢**
 
+
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+Node.js runs **JavaScript on the server** using Chrome's V8 engine and a **non-blocking event loop**—great for I/O-heavy APIs (many concurrent connections, little CPU per request). **npm** manages packages; **Express** is the common web framework. One language for frontend and backend appeals to full-stack teams.
+
+---
+
+## 🎯 Interview Quick Prep
+
+### 1. What is Node.js?
+
+**Simple Answer:** A JavaScript runtime built on V8 for server-side programs—especially network apps, CLIs, and build tools—not a framework by itself.
+
+### 2. Why is Node good for I/O-heavy work?
+
+**Simple Answer:** Single-threaded event loop handles many connections without blocking on disk/network; CPU-heavy tasks can stall the loop—offload those to workers or other services.
+
+### 3. What is npm?
+
+**Simple Answer:** Node's package manager—installs dependencies from registry, runs scripts in `package.json`, locks versions with package-lock.json.
+
+### 4. Node vs browser JavaScript?
+
+**Simple Answer:** Node has `fs`, `http`, `process`; no DOM. Same language syntax but different APIs and deployment model.
+
+### 5. Typical Node backend stack?
+
+**Simple Answer:** Express or Fastify for HTTP, MongoDB/PostgreSQL for data, JWT auth, often deployed behind nginx or as serverless functions.

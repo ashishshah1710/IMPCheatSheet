@@ -281,3 +281,36 @@ public boolean hasPathSum(TreeNode root, int targetSum) {
 
 **👉 Next:** [Graphs →](../05-graphs/README.md)
 
+---
+
+## 💡 Simple Explanation (In Plain English)
+
+- Trees are hierarchical nodes—one root, no cycles; binary trees have at most two children per node.
+- BST property: left smaller, right larger—enables O(log n) search when balanced.
+- DFS goes deep (pre/in/post order); BFS goes level by level—pick based on what you need first.
+- Recursion is natural; always define base case (null node) and trust subtree results.
+
+## 🎯 Interview Quick Prep
+
+### Q1: DFS vs BFS on trees?
+
+**Simple Answer:** DFS uses stack/recursion for path, depth, or subtree aggregation. BFS uses queue for level order, shortest path in unweighted tree, or printing by level. Both O(n) visit all nodes.
+
+### Q2: How do you validate a BST?
+
+**Simple Answer:** Pass min/max bounds down: left must be < node < right with inherited limits, not only comparing immediate children. O(n) time, O(h) recursion stack.
+
+### Q3: What is LCA (lowest common ancestor)?
+
+**Simple Answer:** In BST, walk while both values are on same side; in general binary tree, recurse: if node equals p or q or null, return it; LCA is where left and right subtrees both return non-null.
+
+### Q4: Tree height vs depth vs diameter?
+
+**Simple Answer:** Height often max root-to-leaf edges; depth is node to root; diameter is longest path (may pass through root). Clarify definition—off-by-one errors are common.
+
+### Q5: Balanced vs skewed tree impact?
+
+**Simple Answer:** Skewed BST behaves like linked list O(n); balanced AVL/red-black stay O(log n). Interview mention: real DB indexes care about balance; coding problems often assume balance or state worst case.
+
+**Must-know for interviews:** BFS level order, BST validation with bounds, and DFS recursion template for path/sum problems.
+
