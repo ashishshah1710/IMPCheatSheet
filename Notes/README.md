@@ -1,6 +1,6 @@
 # Notes
 
-Study notes extracted from PDF sources in this folder.
+Study notes extracted from PDF sources, organized by topic.
 
 ## Folders
 
